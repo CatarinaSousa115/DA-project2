@@ -3,8 +3,7 @@
 
 int main()
 {
-    std::cout << "\n=== Delivery Truck Pallet Packing Optimization ===\n";
-    displayMenu();
+    showMainMenu();
 
     return 0;
 }

@@ -4,12 +4,21 @@
 #include "functions.h"
 
 /**
- * @complexity O(n × 2^n)
+ * @brief Solves the 0/1 knapsack problem using brute-force approach.
+ * 
+ * This function tries every possible combination of pallets to find the subset
+ * with the maximum profit that fits within the truck's weight capacity.
+ * 
+ * @param truck The truck object containing the capacity and number of pallets.
+ * @param pallets A vector of Pallet objects available to choose from.
+ * 
+ * @note Time complexity: O(n × 2^n), where n is the number of pallets.
+ * @note Space complexity: O(n), where n is the number of pallets (due to the subset vectors).
  */
-
 void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Brute-force Algorithm ===\n";
+    /// Warns the user if the number of pallets is too high for brute-force and prompts for confirmation.
     if (truck.numPallets >= 20)
     {
         std::cout << "The number of pallets is too high for the brute-force algorithm.\n";
@@ -38,8 +47,10 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     int numSubSet = pow(2, truck.numPallets);
     std::vector<int> bestPallets;
 
+    /// Calculates all possible subsets and checks which ones are valid under the truck's capacity.
     for (int i = 0; i < numSubSet; i++)
     {
+        /// Builds a subset of pallets and calculates its total weight and profit.
         int totalWeight = 0;
         int totalProfit = 0;
         std::vector<int> selectedPallets;
@@ -54,30 +65,20 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
             }
         }
 
-        if (totalWeight <= truck.capacity && totalProfit >= max && bestPallets.size() > selectedPallets.size())
-        {
-            max = totalProfit;
-            bestPallets = selectedPallets;
-        }
-        else if (totalWeight <= truck.capacity && totalProfit > max)
+        /// Updates the best solution if the current subset is valid and more profitable or equally profitable but smaller.
+        if (totalWeight <= truck.capacity &&
+            (totalProfit > max || (totalProfit == max && bestPallets.size() > selectedPallets.size())))
         {
             max = totalProfit;
             bestPallets = selectedPallets;
         }
     }
 
-    for (int i : bestPallets)
-    {
-        for (Pallet pallet : pallets)
-        {
-            if (pallet.pallet == i)
-            {
-                std::cout << pallet.pallet << ", " << pallet.weight << ", " << pallet.profit << "\n";
-            }
-        }
-    }
+    /// Displays the selected pallets that constitute the best solution.
+    printPalletDetails(bestPallets, pallets);
     std::cout << "\n";
 
+    /// Asks the user if they want to test another algorithm and handles the response.
     std::cout << "Do you want test another algorithm? (y/n): ";
     char choice;
     std::cin >> choice;
@@ -88,7 +89,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     }
     if (choice == 'y' || choice == 'Y')
     {
-        main();
+        showMainMenu();
     }
     else if (choice == 'n' || choice == 'N')
     {

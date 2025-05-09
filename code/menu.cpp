@@ -5,6 +5,23 @@
 
 #include "functions.h"
 
+/**
+ * @brief Displays the main menu of the application.
+ * 
+ * This function prints the program title and calls displayMenu() to begin user interaction.
+ */
+void showMainMenu()
+{
+    std::cout << "\n=== Delivery Truck Pallet Packing Optimization ===\n";
+    displayMenu();
+}
+
+/**
+ * @brief Prompts the user to select a dataset and loads the corresponding files.
+ * 
+ * This function constructs the filenames for the truck and pallet datasets based on user input,
+ * validates the files, loads the data, and proceeds to algorithm selection.
+ */
 void displayMenu()
 {
     int filenr;
@@ -40,6 +57,14 @@ void displayMenu()
     chooseAlgorithm(truck, pallets);
 }
 
+/**
+ * @brief Allows the user to choose which algorithm to apply for pallet packing optimization.
+ * 
+ * Presents a list of available algorithms and calls the corresponding function based on user selection.
+ * 
+ * @param truck The truck configuration including capacity and number of pallets.
+ * @param pallets The list of available pallets to consider.
+ */
 void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     int choice = 0;
@@ -59,8 +84,11 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
         std::cin >> choice;
     }
 
-    if (choice == 1)
+    switch (choice)
     {
+    case 1:
         bruteForce(truck, pallets);
+    case 2:
+        dynamicProgramming(truck, pallets);
     }
 }
