@@ -10,4 +10,12 @@ Truck readTruckAndPallets(const std::string &fileName);
 
 std::vector<Pallet> readPallets(const std::string &fileName);
 
+int main();
+
+void displayMenu();
+
+void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
+
+void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets);
+
 #endif

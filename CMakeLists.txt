@@ -7,4 +7,6 @@ add_executable(DA_project2
     code/main.cpp
     code/read_Pallets_csv.cpp
     code/read_TruckAndPallets_csv.cpp
+    code/menu.cpp
+    code/brute_force.cpp
     )
