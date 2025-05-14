@@ -5,13 +5,13 @@
 
 /**
  * @brief Solves the 0/1 knapsack problem using brute-force approach.
- * 
+ *
  * This function tries every possible combination of pallets to find the subset
  * with the maximum profit that fits within the truck's weight capacity.
- * 
+ *
  * @param truck The truck object containing the capacity and number of pallets.
  * @param pallets A vector of Pallet objects available to choose from.
- * 
+ *
  * @note Time complexity: O(n × 2^n), where n is the number of pallets.
  * @note Space complexity: O(n), where n is the number of pallets (due to the subset vectors).
  */
@@ -43,11 +43,18 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
         }
     }
 
+    /// Stores the maximum profit found among all valid subsets.
     int max = 0;
+    /// Total number of possible subsets (2^n).
     int numSubSet = pow(2, truck.numPallets);
     std::vector<int> bestPallets;
 
-    /// Calculates all possible subsets and checks which ones are valid under the truck's capacity.
+    /**
+     * @brief Calculates all possible subsets and checks which ones are valid under the truck's capacity.
+     *
+     * Iterates through each subset represented by an integer bitmask, calculates the total weight and profit,
+     * and updates the best solution if criteria are met.
+     */
     for (int i = 0; i < numSubSet; i++)
     {
         /// Builds a subset of pallets and calculates its total weight and profit.
@@ -78,7 +85,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     printPalletDetails(bestPallets, pallets);
     std::cout << "\n";
 
-    /// Asks the user if they want to test another algorithm and handles the response.
+    /// Prompt user to run another algorithm or exit the program.
     std::cout << "Do you want test another algorithm? (y/n): ";
     char choice;
     std::cin >> choice;

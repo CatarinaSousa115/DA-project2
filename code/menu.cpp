@@ -24,10 +24,12 @@ void showMainMenu()
  */
 void displayMenu()
 {
+    /// Ask user for dataset number to determine which files to load.
     int filenr;
     std::cout << "Please insert the number of the dataset to use: ";
     std::cin >> filenr;
 
+    /// Construct the filenames for the truck and pallets CSV files.
     std::ostringstream fileTruckAndPallets;
     std::ostringstream filePallets;
 
@@ -40,6 +42,7 @@ void displayMenu()
     std::ifstream fileTruck(fileTruckAndPallets.str());
     std::ifstream filePallet(filePallets.str());
 
+    /// Check if both files could be opened; if not, prompt user to try again.
     if (!fileTruck.is_open() && !filePallet.is_open())
     {
         std::cerr << "\nError: Files 'TruckAndPallets_"
@@ -50,8 +53,10 @@ void displayMenu()
         displayMenu();
     }
 
+    /// Read truck data from the selected CSV file.
     Truck truck = readTruckAndPallets(fileTruckAndPallets.str());
 
+    /// Read pallet data from the selected CSV file.
     std::vector<Pallet> pallets = readPallets(filePallets.str());
 
     chooseAlgorithm(truck, pallets);
@@ -67,28 +72,36 @@ void displayMenu()
  */
 void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
-    int choice = 0;
+    char choice;
 
     std::cout << "\n=== Select the algorithm to apply ===\n";
     std::cout << "[1] Brute-force (exhaustive)\n";
     std::cout << "[2] Dynamic programming\n";
     std::cout << "[3] Greedy algorithm\n";
     std::cout << "[4] Integer Linear Programming (ILP)\n";
+    std::cout << "[5] Exit\n";
     std::cout << "=====================================\n";
     std::cout << "Your choice: ";
     std::cin >> choice;
 
-    while (choice < 1 || choice > 4)
+    while (choice < '1' || choice > '5')
     {
-        std::cout << "Invalid option. Please choose between 1 and 4: ";
+        std::cout << "\nInvalid option. Please choose between 1 and 5: ";
         std::cin >> choice;
     }
 
     switch (choice)
     {
-    case 1:
+    /// @note Brute-force method: tests all possible combinations (may be slow).
+    case '1':
         bruteForce(truck, pallets);
-    case 2:
+    /// @note Dynamic programming: uses DP table to find optimal solution efficiently.
+    case '2':
         dynamicProgramming(truck, pallets);
+    /// @note Options [3] and [4] (Greedy, ILP) not yet implemented.
+    /// Exit the program.
+    case '5':
+        std::cout << "\nThank you for using the program!\n";
+        exit(0);
     }
 }
