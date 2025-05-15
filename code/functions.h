@@ -20,6 +20,11 @@ Truck readTruckAndPallets(const std::string &fileName);
  */
 std::vector<Pallet> readPallets(const std::string &fileName);
 
+/**
+ * @brief Entry point of the program.
+ * Handles the initial setup and triggers the main menu.
+ * @return int Exit code.
+ */
 int main();
 
 /**
@@ -59,5 +64,12 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets);
  * @param pallets Complete list of pallets.
  */
 void printPalletDetails(const std::vector<int> &bestPallets, const std::vector<Pallet> &pallets);
+
+/**
+ * @brief Prompts the user to either test another dataset or run another algorithm.
+ * @param truck The current truck configuration.
+ * @param pallets List of pallets associated with the current dataset.
+ */
+void promptRestartOrExit(const Truck &truck, const std::vector<Pallet> &pallets);
 
 #endif

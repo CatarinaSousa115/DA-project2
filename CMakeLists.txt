@@ -11,4 +11,5 @@ add_executable(DA_project2
     code/printPalletDetails.cpp
     code/read_Pallets_csv.cpp
     code/read_TruckAndPallets_csv.cpp
+    code/restartOrExit.cpp
     )

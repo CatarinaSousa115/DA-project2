@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
+#include <string>
 #include <fstream>
 
 #include "functions.h"
@@ -72,6 +73,7 @@ void displayMenu()
  */
 void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
+    std::string input;
     char choice;
 
     std::cout << "\n=== Select the algorithm to apply ===\n";
@@ -82,13 +84,13 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     std::cout << "[5] Exit\n";
     std::cout << "=====================================\n";
     std::cout << "Your choice: ";
-    std::cin >> choice;
-
-    while (choice < '1' || choice > '5')
+    std::cin >> input;
+    while (input.size() != 1 || input[0] < '1' || input[0] > '5')
     {
         std::cout << "\nInvalid option. Please choose between 1 and 5: ";
-        std::cin >> choice;
+        std::cin >> input;
     }
+    choice = input[0];
 
     switch (choice)
     {
