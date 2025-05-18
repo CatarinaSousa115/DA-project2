@@ -3,7 +3,7 @@
 #include <vector>
 #include <chrono>
 #include <limits>
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Solves the 0/1 knapsack problem using brute-force approach.

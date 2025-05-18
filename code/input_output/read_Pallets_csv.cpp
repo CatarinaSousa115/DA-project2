@@ -3,7 +3,7 @@
 #include <sstream>
 #include <string>
 
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Reads pallet data from a CSV file.

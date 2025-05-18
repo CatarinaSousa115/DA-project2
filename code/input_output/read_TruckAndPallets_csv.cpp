@@ -3,7 +3,7 @@
 #include <sstream>
 #include <string>
 
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Reads the truck's capacity and number of pallets from a CSV file.

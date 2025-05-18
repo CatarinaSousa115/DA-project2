@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Prompts the user to either test another dataset or run another algorithm.

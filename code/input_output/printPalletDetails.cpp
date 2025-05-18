@@ -1,5 +1,5 @@
 #include <iostream>
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Prints the details of the selected pallets.

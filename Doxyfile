@@ -1,0 +1,27 @@
+PROJECT_NAME           = "DA-project2"
+OUTPUT_DIRECTORY       = "documentation"
+EXTRACT_ALL            = YES
+INPUT                  = ./code
+RECURSIVE              = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = YES
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+DOT_IMAGE_FORMAT       = svg
+
+
+# Caminho correto para o Graphviz (usa o caminho que obtiveste com `which dot`)
+DOT_PATH              = /opt/homebrew/bin/dot
+
+# Formato dos diagramas gerados (SVG é ótimo para browser)
+DOT_IMAGE_FORMAT      = svg
+
+# Gera diagramas de chamadas e de quem chama
+CALL_GRAPH            = YES
+CALLER_GRAPH          = YES
+
+# Mostra a aparência UML nos diagramas
+UML_LOOK              = YES
+
+# Permite múltiplos diagramas no mesmo ficheiro .dot
+DOT_MULTI_TARGETS     = YES

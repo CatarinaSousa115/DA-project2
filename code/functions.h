@@ -3,8 +3,8 @@
 
 #include <string>
 #include <vector>
-#include "Truck.h"
-#include "Pallet.h"
+#include "structs/Truck.h"
+#include "structs/Pallet.h"
 
 /**
  * @brief Reads truck information from a file.

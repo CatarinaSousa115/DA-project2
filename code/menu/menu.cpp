@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 
-#include "functions.h"
+#include "../functions.h"
 
 /**
  * @brief Displays the main menu of the application.
