@@ -9,16 +9,20 @@
  * @param bestPallets A vector containing the pallet numbers of the best solution.
  * @param pallets A vector of all available Pallet objects.
  */
-void printPalletDetails(const std::vector<int> &bestPallets, const std::vector<Pallet> &pallets)
+void printPalletDetails(const std::vector<int> &bestPallets, const std::vector<Pallet> &pallets, const Truck &truck)
 {
     for (int i : bestPallets)
     {
         for (Pallet pallet : pallets)
         {
-            if (pallet.pallet == i)
+            if (pallet.palletID == i)
             {
-                std::cout << pallet.pallet << ", " << pallet.weight << ", " << pallet.profit << "\n";
+                std::cout << pallet.palletID << ", " << pallet.weight << ", " << pallet.profit << "\n";
             }
         }
     }
+
+    std::cout << "\n";
+
+    promptRestartOrExit(truck, pallets);
 }

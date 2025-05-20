@@ -74,7 +74,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
             {
                 totalWeight += pallets[j].weight;
                 totalProfit += pallets[j].profit;
-                selectedPallets.push_back(pallets[j].pallet);
+                selectedPallets.push_back(pallets[j].palletID);
             }
         }
 
@@ -101,8 +101,5 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
               << " ms\n";
 
     // Print the pallets selected as the optimal solution
-    printPalletDetails(bestPallets, pallets);
-    std::cout << "\n";
-
-    promptRestartOrExit(truck, pallets);
+    printPalletDetails(bestPallets, pallets, truck);
 }

@@ -8,7 +8,7 @@
  */
 struct Pallet
 {
-    int pallet; // Pallet ID
+    int palletID; // Pallet ID
     int weight; // Weight of the pallet
     int profit; // Profit of the pallet
 };

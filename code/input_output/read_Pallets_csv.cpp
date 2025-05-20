@@ -43,7 +43,7 @@ std::vector<Pallet> readPallets(const std::string &fileName)
 
         // Extract pallet ID
         getline(ss, value, ',');
-        pallet.pallet = std::stoi(value);
+        pallet.palletID = std::stoi(value);
 
         // Extract pallet weight
         getline(ss, value, ',');
