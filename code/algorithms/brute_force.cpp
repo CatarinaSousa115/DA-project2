@@ -52,7 +52,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     
     // Number of total combinations = 2^n (each pallet can be included or not)
     int numSubSet = pow(2, truck.numPallets);
-    std::vector<int> bestPallets;
+    std::vector<Pallet> bestPallets;
 
     /**
      * @brief Calculates all possible subsets and checks which ones are valid under the truck's capacity.
@@ -65,7 +65,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
         /// Builds a subset of pallets and calculates its total weight and profit.
         int totalWeight = 0;
         int totalProfit = 0;
-        std::vector<int> selectedPallets;
+        std::vector<Pallet> selectedPallets;
 
         for (int j = 0; j < truck.numPallets; j++)
         {
@@ -74,7 +74,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
             {
                 totalWeight += pallets[j].weight;
                 totalProfit += pallets[j].profit;
-                selectedPallets.push_back(pallets[j].palletID);
+                selectedPallets.push_back(pallets[j]);
             }
         }
 

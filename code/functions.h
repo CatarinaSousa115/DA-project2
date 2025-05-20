@@ -63,7 +63,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets);
  * @param bestPallets Indices of the selected pallets.
  * @param pallets Complete list of pallets.
  */
-void printPalletDetails(const std::vector<int> &bestPallets, const std::vector<Pallet> &pallets);
+void printPalletDetails(const std::vector<Pallet> &bestPallets, const std::vector<Pallet> &pallets, const Truck &truck);
 
 /**
  * @brief Prompts the user to either test another dataset or run another algorithm.
