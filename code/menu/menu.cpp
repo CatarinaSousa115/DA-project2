@@ -25,26 +25,35 @@ void showMainMenu()
  */
 void displayMenu()
 {
-    /// Ask user for dataset number to determine which files to load.
+    std::string input;
     int filenr;
-    std::cout << "Please insert the number of the dataset to use: ";
-    std::cin >> filenr;
 
-    /// Construct the filenames for the truck and pallets CSV files.
+    std::cout << "Please insert the number of the dataset to use: ";
+    std::cin >> input;
+
+
+    if (input.find_first_not_of("0123456789") != std::string::npos)
+    {
+        std::cout << "\nInvalid input. Please enter a valid number.\n\n";
+        displayMenu();
+    }
+
+    filenr = std::stoi(input);
+
     std::ostringstream fileTruckAndPallets;
     std::ostringstream filePallets;
 
-    fileTruckAndPallets << "../datasets-extra/TruckAndPallets_"
+    fileTruckAndPallets << "../datasets/TruckAndPallets_"
                         << std::setw(2) << std::setfill('0') << filenr << ".csv";
 
-    filePallets << "../datasets-extra/Pallets_"
+    filePallets << "../datasets/Pallets_"
                 << std::setw(2) << std::setfill('0') << filenr << ".csv";
 
     std::ifstream fileTruck(fileTruckAndPallets.str());
     std::ifstream filePallet(filePallets.str());
 
     /// Check if both files could be opened; if not, prompt user to try again.
-    if (!fileTruck.is_open() && !filePallet.is_open())
+    if (!fileTruck.is_open() || !filePallet.is_open())
     {
         std::cerr << "\nError: Files 'TruckAndPallets_"
                   << std::setw(2) << std::setfill('0') << filenr << ".csv' and/or 'Pallets_"
