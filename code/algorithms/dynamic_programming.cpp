@@ -14,11 +14,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     int maxWeight = truck.capacity;
     int n = pallets.size();
 
-    std::vector<int> bestProfitAtWeight(maxWeight + 1, 0);
-    std::vector<int> palletCountAtWeight(maxWeight + 1, INT_MAX);
-    std::vector<int> previousWeight(maxWeight + 1, -1);
-    std::vector<int> chosenPalletIndex(maxWeight + 1, -1);
-    palletCountAtWeight[0] = 0;
+    std::vector<std::vector<int>> bestProfitAtWeight(n + 1, std::vector<int>(maxWeight + 1, 0));
 
     if (pallets.empty() || maxWeight <= 0)
     {
@@ -26,50 +22,37 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
         return;
     }
 
-    for (int i = 0; i < n; ++i)
+    for (int i = 1; i <= n; ++i)
     {
-        int weight = pallets[i].weight;
-        int profit = pallets[i].profit;
-        for (int w = maxWeight; w >= 0; --w)
+        int weight = pallets[i - 1].weight;
+        int profit = pallets[i - 1].profit;
+        for (int w = 0; w <= maxWeight; ++w)
         {
-            if (w >= weight && chosenPalletIndex[w - weight] != i)
-            {
-                int prevW = w - weight;
-                int newProfit = bestProfitAtWeight[prevW] + profit;
-                int newusedPallets = palletCountAtWeight[prevW] + 1;
-                if (newProfit > bestProfitAtWeight[w] || (newProfit == bestProfitAtWeight[w] && newusedPallets < palletCountAtWeight[w]))
-                {
-                    bestProfitAtWeight[w] = newProfit;
-                    palletCountAtWeight[w] = newusedPallets;
-                    previousWeight[w] = prevW;
-                    chosenPalletIndex[w] = i;
-                }
-            }
+            if (w >= weight)
+                bestProfitAtWeight[i][w] = std::max(bestProfitAtWeight[i - 1][w], bestProfitAtWeight[i - 1][w - weight] + profit);
+            else
+                bestProfitAtWeight[i][w] = bestProfitAtWeight[i - 1][w];
         }
     }
-    int maxProfit = bestProfitAtWeight[maxWeight];
-
-    std::vector<Pallet> usedMaxProfitPallets;
-    std::vector<bool> used(n, false);
+    std::vector<Pallet> usedPallets;
     int w = maxWeight;
-
-    while (w > 0 && chosenPalletIndex[w] != -1)
+    for (int i = n; i > 0 && w > 0; --i)
     {
-        int idx = chosenPalletIndex[w];
-        if (!used[idx]) {
-            usedMaxProfitPallets.push_back(pallets[idx]);
-            used[idx] = true;
+        if (bestProfitAtWeight[i][w] != bestProfitAtWeight[i - 1][w])
+        {
+            usedPallets.push_back(pallets[i - 1]);
+            w -= pallets[i - 1].weight;
         }
-        w = previousWeight[w];
     }
-    std::reverse(usedMaxProfitPallets.begin(), usedMaxProfitPallets.end());
 
-    std::cout << "Maximum profit: " << maxProfit << "\n";
+    std::reverse(usedPallets.begin(), usedPallets.end());
+
+    std::cout << "Maximum profit: " << bestProfitAtWeight[n][maxWeight] << "\n";
 
     auto end = std::chrono::high_resolution_clock::now();
     std::cout << "Execution time: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
               << " ms\n";
 
-    printPalletDetails(usedMaxProfitPallets, pallets, truck);
+    printPalletDetails(usedPallets, pallets, truck);
 }
