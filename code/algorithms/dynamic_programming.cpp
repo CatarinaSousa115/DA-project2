@@ -21,6 +21,9 @@
  *
  * @param truck The truck object with the capacity constraint.
  * @param pallets The list of pallets with associated weight and profit values.
+ *
+ * @note Time complexity: O(n * W), where n is the number of pallets and W is the truck's capacity.
+ * @note Space complexity: O(n * W), due to the 2D DP table.
  */
 void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
 {

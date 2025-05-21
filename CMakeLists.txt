@@ -7,7 +7,7 @@ add_executable(DA_project2
     code/algorithms/brute_force.cpp
     code/algorithms/dynamic_programming.cpp
     code/algorithms/greedy_algorithm.cpp
-    code/menu/main.cpp
+    code/main.cpp
     code/menu/menu.cpp
     code/input_output/printPalletDetails.cpp
     code/input_output/read_Pallets_csv.cpp

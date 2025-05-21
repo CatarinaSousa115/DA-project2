@@ -8,7 +8,7 @@
 
 /**
  * @brief Displays the main menu of the application.
- * 
+ *
  * This function prints the program title and calls displayMenu() to begin user interaction.
  */
 void showMainMenu()
@@ -19,7 +19,7 @@ void showMainMenu()
 
 /**
  * @brief Prompts the user to select a dataset and loads the corresponding files.
- * 
+ *
  * This function constructs the filenames for the truck and pallet datasets based on user input,
  * validates the files, loads the data, and proceeds to algorithm selection.
  */
@@ -30,7 +30,6 @@ void displayMenu()
 
     std::cout << "Please insert the number of the dataset to use: ";
     std::cin >> input;
-
 
     if (input.find_first_not_of("0123456789") != std::string::npos)
     {
@@ -74,9 +73,9 @@ void displayMenu()
 
 /**
  * @brief Allows the user to choose which algorithm to apply for pallet packing optimization.
- * 
+ *
  * Presents a list of available algorithms and calls the corresponding function based on user selection.
- * 
+ *
  * @param truck The truck configuration including capacity and number of pallets.
  * @param pallets The list of available pallets to consider.
  */

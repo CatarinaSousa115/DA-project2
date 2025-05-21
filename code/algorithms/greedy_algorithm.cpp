@@ -22,6 +22,9 @@
  *
  * @param truck The truck object with a defined capacity.
  * @param pallets The list of available pallets with weight and profit.
+ *
+ * @note Time complexity: O(n log n), where n is the number of pallets (due to sorting).
+ * @note Space complexity: O(n), for storing sorted and selected pallets.
  */
 void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {

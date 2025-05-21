@@ -37,12 +37,12 @@ Truck readTruckAndPallets(const std::string &fileName)
     if (getline(file, line))
     {
         std::stringstream ss(line);
-        std::string       value;
+        std::string value;
 
         // Extract truck capacity
         getline(ss, value, ',');
         truck.capacity = std::stoi(value);
-        
+
         // Extract number of pallets
         getline(ss, value, ',');
         truck.numPallets = std::stoi(value);

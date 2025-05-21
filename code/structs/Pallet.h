@@ -3,14 +3,14 @@
 
 /**
  * @brief Represents a pallet to be loaded onto a truck.
- * 
+ *
  * Contains the pallet ID, its weight, and associated profit.
  */
 struct Pallet
 {
     int palletID; // Pallet ID
-    int weight; // Weight of the pallet
-    int profit; // Profit of the pallet
+    int weight;   // Weight of the pallet
+    int profit;   // Profit of the pallet
 };
 
-#endif //PALLET_H
+#endif // PALLET_H
