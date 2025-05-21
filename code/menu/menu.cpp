@@ -109,7 +109,9 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     /// @note Dynamic programming: uses DP table to find optimal solution efficiently.
     case '2':
         dynamicProgramming(truck, pallets);
-    /// @note Options [3] and [4] (Greedy, ILP) not yet implemented.
+
+    case '3':
+        greedyAlgorithm(truck, pallets);
     /// Exit the program.
     case '5':
         std::cout << "\nThank you for using the program!\n";

@@ -58,6 +58,10 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets);
  */
 void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets);
 
+void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
+
+void sortPallets(std::vector<Pallet> &pallets);
+
 /**
  * @brief Prints details of the selected pallets.
  * @param bestPallets Indices of the selected pallets.
@@ -71,5 +75,10 @@ void printPalletDetails(const std::vector<Pallet> &bestPallets, const std::vecto
  * @param pallets List of pallets associated with the current dataset.
  */
 void promptRestartOrExit(const Truck &truck, const std::vector<Pallet> &pallets);
+
+void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int currentWeight,
+               int currentProfit,
+               std::vector<Pallet> &currentPallets, std::vector<Pallet> &bestPallets,
+               int &maxProfit);
 
 #endif
