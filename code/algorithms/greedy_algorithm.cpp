@@ -21,7 +21,7 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     }
 
     std::vector<Pallet> sortedPallets = pallets;
-    sortPallets(sortedPallets);
+    sortPallets_ratio(sortedPallets);
 
     int maxWeight = truck.capacity;
     int maxProfit = 0;
@@ -37,15 +37,19 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
         }
     }
 
-    printPalletDetails(usedPallets, pallets, truck);
+    sortPallets(usedPallets);
+
+    std::cout << "Maximum profit: " << maxProfit << "\n";
 
     auto end = std::chrono::high_resolution_clock::now();
+
     std::cout << "Execution time: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
+              << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
+    printPalletDetails(usedPallets, pallets, truck);
 }
 
-void sortPallets(std::vector<Pallet> &pallets) 
+void sortPallets_ratio(std::vector<Pallet> &pallets)
 {
     std::sort(pallets.begin(), pallets.end(), [](const Pallet &pallet1, const Pallet &pallet2)
               {
@@ -53,6 +57,11 @@ void sortPallets(std::vector<Pallet> &pallets)
         double ratio2 = static_cast<double>(pallet2.profit) / pallet2.weight;
         if (ratio1 != ratio2) return ratio1 > ratio2;
         if (pallet1.weight != pallet2.weight) return pallet1.weight > pallet2.weight;
-        return pallet1.palletID < pallet2.palletID; 
-    });
+        return pallet1.palletID < pallet2.palletID; });
+}
+
+void sortPallets(std::vector<Pallet> &pallets)
+{
+    std::sort(pallets.begin(), pallets.end(), [](const Pallet &pallet1, const Pallet &pallet2)
+              { return pallet1.palletID < pallet2.palletID; });
 }
