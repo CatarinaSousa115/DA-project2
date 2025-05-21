@@ -14,18 +14,6 @@
 
 #include "../functions.h"
 
-/**
- * @brief Solves the 0/1 knapsack problem using a greedy heuristic.
- *
- * Sorts pallets by profit-to-weight ratio and selects as many as fit within
- * the truck's capacity. This does not guarantee an optimal solution but is efficient.
- *
- * @param truck The truck object with a defined capacity.
- * @param pallets The list of available pallets with weight and profit.
- *
- * @note Time complexity: O(n log n), where n is the number of pallets (due to sorting).
- * @note Space complexity: O(n), for storing sorted and selected pallets.
- */
 void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Greedy Algorithm ===\n";
@@ -68,15 +56,6 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     printPalletDetails(usedPallets, pallets, truck);
 }
 
-/**
- * @brief Sorts pallets in descending order of profit-to-weight ratio.
- *
- * This function is used to prioritize pallets that provide the highest profit per unit of weight,
- * which is essential for the greedy approach to the 0/1 knapsack problem.
- * In case of ties, pallets are sorted by descending weight, and then ascending pallet ID.
- *
- * @param pallets Vector of pallets to be sorted.
- */
 void sortPallets_ratio(std::vector<Pallet> &pallets)
 {
     std::sort(pallets.begin(), pallets.end(), [](const Pallet &pallet1, const Pallet &pallet2)
@@ -88,13 +67,6 @@ void sortPallets_ratio(std::vector<Pallet> &pallets)
         return pallet1.palletID < pallet2.palletID; });
 }
 
-/**
- * @brief Sorts pallets by their palletID in ascending order.
- *
- * This is used to maintain consistent order when displaying pallets.
- *
- * @param pallets Vector of pallets to be sorted.
- */
 void sortPallets(std::vector<Pallet> &pallets)
 {
     std::sort(pallets.begin(), pallets.end(), [](const Pallet &pallet1, const Pallet &pallet2)

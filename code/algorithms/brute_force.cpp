@@ -13,19 +13,6 @@
 #include <limits>
 #include "../functions.h"
 
-/**
- * @brief Solves the 0/1 knapsack problem using brute-force approach.
- *
- * This function tries every possible combination of pallets to find the subset
- * with the maximum profit that fits within the truck's weight capacity.
- *
- * @param truck The truck object containing the capacity and number of pallets.
- * @param pallets A vector of Pallet objects available to choose from.
- *
- * @note Time complexity: O(2^n), where n is the number of pallets.
- * @note Space complexity: O(n), where n is the number of pallets (due to the subset vectors).
- */
-
 void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Brute-force Algorithm ===\n";
@@ -35,6 +22,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     int maxWeight = truck.capacity;
     if (pallets.empty() || maxWeight <= 0)
     {
+        // Exit early if there are no pallets or the truck has no capacity
         std::cout << "No pallets available or 0 capacity" << std::endl;
         return;
     }
@@ -43,6 +31,7 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     std::vector<Pallet> bestPallets;
     std::vector<Pallet> currentPallets;
 
+    // Start backtracking to find the best subset of pallets with maximum profit
     backtrack(pallets, maxWeight, 0, 0, 0, currentPallets, bestPallets, maxProfit);
 
     // If no valid subset was found (i.e., all exceed truck capacity)
@@ -64,27 +53,13 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     printPalletDetails(bestPallets, pallets, truck);
 }
 
-/**
- * @brief Recursive helper function to generate all possible combinations of pallets.
- *
- * This function uses backtracking to explore all possible subsets of pallets,
- * updating the combination with the highest profit that respects the truck's weight limit.
- *
- * @param pallets Vector of available Pallet objects.
- * @param maxWeight Maximum weight capacity of the truck.
- * @param index Current index in the pallets vector.
- * @param currentWeight Accumulated weight of the current combination.
- * @param currentProfit Accumulated profit of the current combination.
- * @param currentPallets Temporary vector holding the current combination of pallets.
- * @param bestPallets Vector storing the best combination of pallets found so far.
- * @param maxProfit Reference to the highest profit found.
- */
-// Helper function to sum indices of subset pallets in the original pallets vector
 int sumIndices(const std::vector<Pallet> &subset, const std::vector<Pallet> &allPallets)
 {
+    // Calculate the sum of indices of the selected subset of pallets in the original pallet list
     int sum = 0;
     for (const auto &p : subset)
     {
+        // Find the index of the current pallet in the full pallet list by matching palletID
         for (size_t i = 0; i < allPallets.size(); ++i)
         {
             if (p.palletID == allPallets[i].palletID)
@@ -105,6 +80,7 @@ void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int
     // Base case: if the current index is equal to the number of pallets
     if (index == pallets.size())
     {
+        // Check if the current combination has a better profit than the best so far
         if (currentProfit > maxProfit)
         {
             maxProfit = currentProfit;
@@ -128,14 +104,17 @@ void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int
         }
         return;
     }
+    // Explore path where current pallet is not included
     backtrack(pallets, maxWeight, index + 1, currentWeight, currentProfit, currentPallets, bestPallets, maxProfit);
     int newWeight = currentWeight + pallets[index].weight;
+    // Explore path where current pallet is included, if it doesn't exceed capacity
     if (newWeight <= maxWeight)
     {
         currentPallets.push_back(pallets[index]);
         backtrack(pallets, maxWeight, index + 1, newWeight,
                   currentProfit + pallets[index].profit,
                   currentPallets, bestPallets, maxProfit);
+        // Backtrack: remove last added pallet to try next combination
         currentPallets.pop_back();
     }
 }

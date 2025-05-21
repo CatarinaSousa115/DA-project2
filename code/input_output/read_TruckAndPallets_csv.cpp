@@ -5,15 +5,6 @@
 
 #include "../functions.h"
 
-/**
- * @brief Reads the truck's capacity and number of pallets from a CSV file.
- *
- * The function skips the header line and reads the second line,
- * extracting the truck capacity and the number of pallets.
- *
- * @param fileName Name of the CSV file containing the truck data.
- * @return Truck Struct with the loaded capacity and pallet count.
- */
 Truck readTruckAndPallets(const std::string &fileName)
 {
     // Opens the CSV file for reading

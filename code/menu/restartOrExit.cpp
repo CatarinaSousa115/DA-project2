@@ -3,16 +3,7 @@
 #include <string>
 #include "../functions.h"
 
-/**
- * @brief Prompts the user to either test another dataset or run another algorithm.
- *
- * This function presents the user with the option to either test another dataset
- * or run another algorithm. Based on the user's input, it either returns to the
- * main menu, reruns the algorithm selection, or exits the program.
- *
- * @param truck A reference to the Truck object, used if the user opts to run another algorithm.
- * @param pallets A constant reference to a vector of Pallet objects, used if the user opts to run another algorithm.
- */
+
 void promptRestartOrExit(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::string input;

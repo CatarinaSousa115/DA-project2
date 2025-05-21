@@ -13,18 +13,6 @@
 
 #include "../functions.h"
 
-/**
- * @brief Solves the 0/1 knapsack problem using dynamic programming.
- *
- * Fills a 2D table where each cell represents the maximum profit achievable using the first i pallets
- * with a given capacity w. Reconstructs the optimal set of pallets based on this table.
- *
- * @param truck The truck object with the capacity constraint.
- * @param pallets The list of pallets with associated weight and profit values.
- *
- * @note Time complexity: O(n * W), where n is the number of pallets and W is the truck's capacity.
- * @note Space complexity: O(n * W), due to the 2D DP table.
- */
 void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Dynamic Programming Algorithm ===\n";

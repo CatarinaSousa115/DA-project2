@@ -5,15 +5,6 @@
 
 #include "../functions.h"
 
-/**
- * @brief Reads pallet data from a CSV file.
- *
- * This function opens a CSV file, skips the header, and reads each line
- * to extract pallet ID, weight, and profit. It returns a vector of Pallet objects.
- *
- * @param fileName The name of the CSV file to read.
- * @return std::vector<Pallet> List of pallets read from the file.
- */
 std::vector<Pallet> readPallets(const std::string &fileName)
 {
     // Opens the CSV file for reading
