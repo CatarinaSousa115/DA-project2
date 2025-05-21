@@ -31,30 +31,6 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     std::cout << "\n=== Brute-force Algorithm ===\n";
     auto start = std::chrono::high_resolution_clock::now();
     char choice;
-    /// Warns the user if the number of pallets is too high for brute-force and prompts for confirmation.
-    if (truck.numPallets > 30)
-    {
-        std::cout << "The number of pallets is too high for the brute-force algorithm.\n";
-        std::cout << "You really want to use this algorithm? (y/n): ";
-        std::string input;
-        std::cin >> input;
-        while (input.size() != 1 || (input[0] != 'y' && input[0] != 'Y' && input[0] != 'n' && input[0] != 'N'))
-        {
-            std::cout << "\nInvalid option. Please choose between y and n: ";
-            std::cin >> input;
-        }
-        choice = input[0];
-        if (choice == 'n' || choice == 'N')
-        {
-            std::cout << "\nPlease choose another algorithm.\n";
-            chooseAlgorithm(truck, pallets);
-        }
-        else if (choice == 'y' || choice == 'Y')
-        {
-            std::cout << "\nThis algorithm may take a considerable amount of time to run.\n";
-            std::cout << "Please wait!\n";
-        }
-    }
 
     int maxWeight = truck.capacity;
     if (pallets.empty() || maxWeight <= 0)
@@ -103,6 +79,24 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
  * @param bestPallets Vector storing the best combination of pallets found so far.
  * @param maxProfit Reference to the highest profit found.
  */
+// Helper function to sum indices of subset pallets in the original pallets vector
+int sumIndices(const std::vector<Pallet> &subset, const std::vector<Pallet> &allPallets)
+{
+    int sum = 0;
+    for (const auto &p : subset)
+    {
+        for (size_t i = 0; i < allPallets.size(); ++i)
+        {
+            if (p.palletID == allPallets[i].palletID)
+            {
+                sum += static_cast<int>(i);
+                break;
+            }
+        }
+    }
+    return sum;
+}
+
 void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int currentWeight,
                int currentProfit,
                std::vector<Pallet> &currentPallets, std::vector<Pallet> &bestPallets,
@@ -111,12 +105,26 @@ void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int
     // Base case: if the current index is equal to the number of pallets
     if (index == pallets.size())
     {
-        if (currentProfit > maxProfit ||
-            (currentProfit == maxProfit && currentPallets.size() < bestPallets.size()))
-
+        if (currentProfit > maxProfit)
         {
             maxProfit = currentProfit;
             bestPallets = currentPallets;
+        }
+        else if (currentProfit == maxProfit)
+        {
+            if (currentPallets.size() < bestPallets.size())
+            {
+                bestPallets = currentPallets;
+            }
+            else if (currentPallets.size() == bestPallets.size())
+            {
+                int currentSum = sumIndices(currentPallets, pallets);
+                int bestSum = sumIndices(bestPallets, pallets);
+                if (currentSum < bestSum)
+                {
+                    bestPallets = currentPallets;
+                }
+            }
         }
         return;
     }
