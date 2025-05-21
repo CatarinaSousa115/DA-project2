@@ -108,6 +108,8 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets);
  */
 void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
 
+void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
+
 /**
  * @brief Sorts pallets by descending profit-to-weight ratio.
  *

@@ -88,7 +88,7 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     std::cout << "[1] Brute-force (exhaustive)\n";
     std::cout << "[2] Dynamic programming\n";
     std::cout << "[3] Greedy algorithm\n";
-    std::cout << "[4] Integer Linear Programming (ILP)\n";
+    std::cout << "[4] Hybrid algorithm\n";
     std::cout << "[5] Exit\n";
     std::cout << "=====================================\n";
     std::cout << "Your choice: ";
@@ -108,10 +108,13 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     /// @note Dynamic programming: uses DP table to find optimal solution efficiently.
     case '2':
         dynamicProgramming(truck, pallets);
-
+    /// @note Greedy algorithm: selects pallets based on profit-to-weight ratio.
     case '3':
         greedyAlgorithm(truck, pallets);
-    /// Exit the program.
+    /// @note Hybrid algorithm: combines greedy and DP for improved performance.
+    case '4':
+        hybridAlgorithm(truck, pallets);
+    /// @note Exit: terminates the program.
     case '5':
         std::cout << "\nThank you for using the program!\n";
         exit(0);
