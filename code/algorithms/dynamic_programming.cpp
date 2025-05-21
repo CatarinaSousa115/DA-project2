@@ -1,3 +1,10 @@
+/**
+ * @file dynamic_programming.cpp
+ * @brief Implements the dynamic programming algorithm for the 0/1 knapsack problem.
+ *
+ * This file contains the function that calculates the most profitable combination of pallets
+ * that fit within the truck's weight capacity using dynamic programming.
+ */
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -6,6 +13,15 @@
 
 #include "../functions.h"
 
+/**
+ * @brief Solves the 0/1 knapsack problem using dynamic programming.
+ *
+ * Fills a 2D table where each cell represents the maximum profit achievable using the first i pallets
+ * with a given capacity w. Reconstructs the optimal set of pallets based on this table.
+ *
+ * @param truck The truck object with the capacity constraint.
+ * @param pallets The list of pallets with associated weight and profit values.
+ */
 void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Dynamic Programming Algorithm ===\n";
@@ -51,7 +67,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
 
     auto end = std::chrono::high_resolution_clock::now();
     std::cout << "Execution time: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
+              << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
 
     printPalletDetails(usedPallets, pallets, truck);

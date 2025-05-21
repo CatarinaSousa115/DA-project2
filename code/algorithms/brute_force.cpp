@@ -1,3 +1,11 @@
+/**
+ * @file brute_force.cpp
+ * @brief Implements the brute-force algorithm for the 0/1 knapsack problem.
+ *
+ * Contains the main bruteForce function and its recursive helper (backtrack).
+ * This algorithm explores all possible combinations of pallets to find the most profitable subset
+ * that fits within the truck's weight capacity.
+ */
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -18,7 +26,6 @@
  * @note Space complexity: O(n), where n is the number of pallets (due to the subset vectors).
  */
 
- 
 void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
 {
     std::cout << "\n=== Brute-force Algorithm ===\n";
@@ -70,17 +77,32 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
         return;
     }
 
+    std::cout << "Maximum profit: " << maxProfit << "\n";
+
     auto end = std::chrono::high_resolution_clock::now();
     std::cout << "Execution time: "
-              << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
+              << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
-
-    std::cout << "Maximum profit: " << maxProfit << "\n";
 
     // Print the pallets selected as the optimal solution
     printPalletDetails(bestPallets, pallets, truck);
 }
 
+/**
+ * @brief Recursive helper function to generate all possible combinations of pallets.
+ *
+ * This function uses backtracking to explore all possible subsets of pallets,
+ * updating the combination with the highest profit that respects the truck's weight limit.
+ *
+ * @param pallets Vector of available Pallet objects.
+ * @param maxWeight Maximum weight capacity of the truck.
+ * @param index Current index in the pallets vector.
+ * @param currentWeight Accumulated weight of the current combination.
+ * @param currentProfit Accumulated profit of the current combination.
+ * @param currentPallets Temporary vector holding the current combination of pallets.
+ * @param bestPallets Vector storing the best combination of pallets found so far.
+ * @param maxProfit Reference to the highest profit found.
+ */
 void backtrack(const std::vector<Pallet> &pallets, int maxWeight, int index, int currentWeight,
                int currentProfit,
                std::vector<Pallet> &currentPallets, std::vector<Pallet> &bestPallets,
