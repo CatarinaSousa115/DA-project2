@@ -1,0 +1,50 @@
+\doxysection{functions.\+h}
+\hypertarget{functions_8h_source}{}\label{functions_8h_source}\index{code/functions.h@{code/functions.h}}
+\mbox{\hyperlink{functions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_FUNCTIONS\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_FUNCTIONS\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_truck_8h}{structs/Truck.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pallet_8h}{structs/Pallet.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00018\ \mbox{\hyperlink{struct_truck}{Truck}}\ \mbox{\hyperlink{functions_8h_adc0138cd22cf4d3375b458a1c9522f0c}{readTruckAndPallets}}(\textcolor{keyword}{const}\ std::string\ \&fileName);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00029\ std::vector<Pallet>\ \mbox{\hyperlink{functions_8h_af331087136ecc7f884f5612873f953b7}{readPallets}}(\textcolor{keyword}{const}\ std::string\ \&fileName);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{functions_8h_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a547646815560a705ed2ab461dbf46d04}{showMainMenu}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a59c2926dd9b0968badf463aaf4f91422}{displayMenu}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_ab17533eaaae8ec59a61793733ac91cb6}{promptRestartOrExit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_aa8866811b98525a20975ec74689ae166}{chooseAlgorithm}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9}{bruteForce}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a60a210b47c158323349fd5fdd12670a7}{backtrack}}(\textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets,\ \textcolor{keywordtype}{int}\ maxWeight,\ \textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{int}\ currentWeight,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentProfit,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Pallet>\ \&currentPallets,\ std::vector<Pallet>\ \&bestPallets,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&maxProfit);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{functions_8h_a074ab23d57728d234af22335f23dac5d}{sumIndices}}(\textcolor{keyword}{const}\ std::vector<Pallet>\ \&subset,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&allPallets);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a65ced1110e5c23b49889f10d4c390c48}{dynamicProgramming}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_ac07353f6977284db6277faff5e48d716}{greedyAlgorithm}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00165\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c}{hybridAlgorithm}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00176\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a84083ac10efa2099da930cbaf6052c8d}{sortPallets\_ratio}}(std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_a1b2e2e4b39e3ac9573ec033cad0d8810}{sortPallets}}(std::vector<Pallet>\ \&pallets);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8}{printPalletDetails}}(\textcolor{keyword}{const}\ std::vector<Pallet>\ \&bestPallets,\ \textcolor{keyword}{const}\ std::vector<Pallet>\ \&pallets,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_truck}{Truck}}\ \&truck);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

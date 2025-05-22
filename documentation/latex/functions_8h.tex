@@ -1,0 +1,605 @@
+\doxysection{code/functions.h File Reference}
+\hypertarget{functions_8h}{}\label{functions_8h}\index{code/functions.h@{code/functions.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}structs/\+Truck.\+h"{}}\newline
+{\ttfamily \#include "{}structs/\+Pallet.\+h"{}}\newline
+Include dependency graph for functions.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_truck}{Truck}} \mbox{\hyperlink{functions_8h_adc0138cd22cf4d3375b458a1c9522f0c}{read\+Truck\+And\+Pallets}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Reads the truck\textquotesingle{}s capacity and number of pallets from a CSV file. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \mbox{\hyperlink{functions_8h_af331087136ecc7f884f5612873f953b7}{read\+Pallets}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Reads pallet data from a CSV file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{functions_8h_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Program entry point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a547646815560a705ed2ab461dbf46d04}{show\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu of the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Prompts the user to select a dataset and loads the corresponding files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_ab17533eaaae8ec59a61793733ac91cb6}{prompt\+Restart\+Or\+Exit}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Prompts the user to either test another dataset or run another algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_aa8866811b98525a20975ec74689ae166}{choose\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Allows the user to choose which algorithm to apply for pallet packing optimization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9}{brute\+Force}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using brute-\/force approach. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a60a210b47c158323349fd5fdd12670a7}{backtrack}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, int max\+Weight, int index, int current\+Weight, int current\+Profit, std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&current\+Pallets, std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&best\+Pallets, int \&max\+Profit)
+\begin{DoxyCompactList}\small\item\em Recursive helper function to generate all possible combinations of pallets. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{functions_8h_a074ab23d57728d234af22335f23dac5d}{sum\+Indices}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&subset, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&all\+Pallets)
+\begin{DoxyCompactList}\small\item\em Computes the sum of indices of a subset of pallets within the full pallet list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a65ced1110e5c23b49889f10d4c390c48}{dynamic\+Programming}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using dynamic programming. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_ac07353f6977284db6277faff5e48d716}{greedy\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using a greedy heuristic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c}{hybrid\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Hybrid algorithm combining greedy and dynamic programming approaches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a84083ac10efa2099da930cbaf6052c8d}{sort\+Pallets\+\_\+ratio}} (std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Sorts pallets in descending order of profit-\/to-\/weight ratio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_a1b2e2e4b39e3ac9573ec033cad0d8810}{sort\+Pallets}} (std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Sorts pallets by their pallet\+ID in ascending order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8}{print\+Pallet\+Details}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&best\+Pallets, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, const \mbox{\hyperlink{struct_truck}{Truck}} \&truck)
+\begin{DoxyCompactList}\small\item\em Prints details about the selected pallets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{functions_8h_a60a210b47c158323349fd5fdd12670a7}\index{functions.h@{functions.h}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily \label{functions_8h_a60a210b47c158323349fd5fdd12670a7} 
+void backtrack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{max\+Weight}{, }\item[{int}]{index}{, }\item[{int}]{current\+Weight}{, }\item[{int}]{current\+Profit}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{current\+Pallets}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{best\+Pallets}{, }\item[{int \&}]{max\+Profit}{}\end{DoxyParamCaption})}
+
+
+
+Recursive helper function to generate all possible combinations of pallets. 
+
+This function uses backtracking to explore all possible subsets of pallets, updating the combination with the highest profit that respects the truck\textquotesingle{}s weight limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of available \doxylink{struct_pallet}{Pallet} objects. \\
+\hline
+{\em max\+Weight} & Maximum weight capacity of the truck. \\
+\hline
+{\em index} & Current index in the pallets vector. \\
+\hline
+{\em current\+Weight} & Accumulated weight of the current combination. \\
+\hline
+{\em current\+Profit} & Accumulated profit of the current combination. \\
+\hline
+{\em current\+Pallets} & Temporary vector holding the current combination of pallets. \\
+\hline
+{\em best\+Pallets} & Vector storing the best combination of pallets found so far. \\
+\hline
+{\em max\+Profit} & Reference to the highest profit found. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{functions_8h_a60a210b47c158323349fd5fdd12670a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a60a210b47c158323349fd5fdd12670a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9}\index{functions.h@{functions.h}!bruteForce@{bruteForce}}
+\index{bruteForce@{bruteForce}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{bruteForce()}{bruteForce()}}
+{\footnotesize\ttfamily \label{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9} 
+void brute\+Force (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using brute-\/force approach. 
+
+This function tries every possible combination of pallets to find the subset with the maximum profit that fits within the truck\textquotesingle{}s weight capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object containing the capacity and number of pallets. \\
+\hline
+{\em pallets} & A vector of \doxylink{struct_pallet}{Pallet} objects available to choose from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets. 
+
+Space complexity\+: O(n), where n is the number of pallets (due to the subset vectors). 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a69edcf63a452d0c85b37bc82c233e5f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_aa8866811b98525a20975ec74689ae166}\index{functions.h@{functions.h}!chooseAlgorithm@{chooseAlgorithm}}
+\index{chooseAlgorithm@{chooseAlgorithm}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{chooseAlgorithm()}{chooseAlgorithm()}}
+{\footnotesize\ttfamily \label{functions_8h_aa8866811b98525a20975ec74689ae166} 
+void choose\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Allows the user to choose which algorithm to apply for pallet packing optimization. 
+
+Presents a list of available algorithms and calls the corresponding function based on user selection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck configuration including capacity and number of pallets. \\
+\hline
+{\em pallets} & The list of available pallets to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Brute-\/force method\+: tests all possible combinations (may be slow).
+
+Dynamic programming\+: uses DP table to find optimal solution efficiently.
+
+Greedy algorithm\+: selects pallets based on profit-\/to-\/weight ratio.
+
+Hybrid algorithm\+: combines greedy and DP for improved performance.
+
+Exit\+: terminates the program.
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_aa8866811b98525a20975ec74689ae166_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_aa8866811b98525a20975ec74689ae166_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a59c2926dd9b0968badf463aaf4f91422}\index{functions.h@{functions.h}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily \label{functions_8h_a59c2926dd9b0968badf463aaf4f91422} 
+void display\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user to select a dataset and loads the corresponding files. 
+
+This function constructs the filenames for the truck and pallet datasets based on user input, validates the files, loads the data, and proceeds to algorithm selection. Check if both files could be opened; if not, prompt user to try again.
+
+Read truck data from the selected CSV file.
+
+Read pallet data from the selected CSV file.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a59c2926dd9b0968badf463aaf4f91422_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a59c2926dd9b0968badf463aaf4f91422_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a65ced1110e5c23b49889f10d4c390c48}\index{functions.h@{functions.h}!dynamicProgramming@{dynamicProgramming}}
+\index{dynamicProgramming@{dynamicProgramming}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{dynamicProgramming()}{dynamicProgramming()}}
+{\footnotesize\ttfamily \label{functions_8h_a65ced1110e5c23b49889f10d4c390c48} 
+void dynamic\+Programming (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using dynamic programming. 
+
+Fills a 2D table where each cell represents the maximum profit achievable using the first i pallets with a given capacity w. Reconstructs the optimal set of pallets based on this table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with the capacity constraint. \\
+\hline
+{\em pallets} & The list of pallets with associated weight and profit values.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck\textquotesingle{}s capacity. 
+
+Space complexity\+: O(n \texorpdfstring{$\ast$}{*} W), due to the 2D DP table. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a65ced1110e5c23b49889f10d4c390c48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a65ced1110e5c23b49889f10d4c390c48_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_ac07353f6977284db6277faff5e48d716}\index{functions.h@{functions.h}!greedyAlgorithm@{greedyAlgorithm}}
+\index{greedyAlgorithm@{greedyAlgorithm}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{greedyAlgorithm()}{greedyAlgorithm()}}
+{\footnotesize\ttfamily \label{functions_8h_ac07353f6977284db6277faff5e48d716} 
+void greedy\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using a greedy heuristic. 
+
+Sorts pallets by profit-\/to-\/weight ratio and selects as many as fit within the truck\textquotesingle{}s capacity. This does not guarantee an optimal solution but is efficient.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with a defined capacity. \\
+\hline
+{\em pallets} & The list of available pallets with weight and profit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(n log n), where n is the number of pallets (due to sorting). 
+
+Space complexity\+: O(n), for storing sorted and selected pallets. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ac07353f6977284db6277faff5e48d716_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ac07353f6977284db6277faff5e48d716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c}\index{functions.h@{functions.h}!hybridAlgorithm@{hybridAlgorithm}}
+\index{hybridAlgorithm@{hybridAlgorithm}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{hybridAlgorithm()}{hybridAlgorithm()}}
+{\footnotesize\ttfamily \label{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c} 
+void hybrid\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Hybrid algorithm combining greedy and dynamic programming approaches. 
+
+Executes a greedy algorithm to get an initial solution and profit, then runs a dynamic programming algorithm with pruning to find an optimal or improved solution. Compares the final result with the greedy one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with a defined capacity. \\
+\hline
+{\em pallets} & The list of available pallets with weight and profit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: Depends on pruning efficiency. Worst-\/case\+: O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck capacity. Best-\/case\+: close to O(n log n), leveraging greedy shortcut. 
+
+Space complexity\+: O(n \texorpdfstring{$\ast$}{*} W), due to the DP table and auxiliary structures. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ab6b0743f8f01b3ae22e6b3aeeabd9a3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{functions.h@{functions.h}!main@{main}}
+\index{main@{main}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{functions_8h_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Program entry point. 
+
+Sets up initial configuration and triggers the main menu.
+
+\begin{DoxyReturn}{Returns}
+Exit status code.
+\end{DoxyReturn}
+Starts the application by displaying the main menu.
+
+\begin{DoxyReturn}{Returns}
+int Exit status code (0 for successful execution). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8}\index{functions.h@{functions.h}!printPalletDetails@{printPalletDetails}}
+\index{printPalletDetails@{printPalletDetails}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{printPalletDetails()}{printPalletDetails()}}
+{\footnotesize\ttfamily \label{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8} 
+void print\+Pallet\+Details (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{best\+Pallets}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{}\end{DoxyParamCaption})}
+
+
+
+Prints details about the selected pallets. 
+
+This function iterates over the best pallets and prints their pallet number, weight, and profit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em best\+Pallets} & A vector containing the pallet numbers of the best solution. \\
+\hline
+{\em pallets} & A vector of all available \doxylink{struct_pallet}{Pallet} objects. \\
+\hline
+{\em truck} & \doxylink{struct_truck}{Truck} configuration. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_afaf0a4d2e9042535426e2a7774dda8a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_ab17533eaaae8ec59a61793733ac91cb6}\index{functions.h@{functions.h}!promptRestartOrExit@{promptRestartOrExit}}
+\index{promptRestartOrExit@{promptRestartOrExit}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{promptRestartOrExit()}{promptRestartOrExit()}}
+{\footnotesize\ttfamily \label{functions_8h_ab17533eaaae8ec59a61793733ac91cb6} 
+void prompt\+Restart\+Or\+Exit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user to either test another dataset or run another algorithm. 
+
+This function presents the user with the option to either test another dataset or run another algorithm. Based on the user\textquotesingle{}s input, it either returns to the main menu, reruns the algorithm selection, or exits the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A reference to the \doxylink{struct_truck}{Truck} object, used if the user opts to run another algorithm. \\
+\hline
+{\em pallets} & A constant reference to a vector of \doxylink{struct_pallet}{Pallet} objects, used if the user opts to run another algorithm. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ab17533eaaae8ec59a61793733ac91cb6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_ab17533eaaae8ec59a61793733ac91cb6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_af331087136ecc7f884f5612873f953b7}\index{functions.h@{functions.h}!readPallets@{readPallets}}
+\index{readPallets@{readPallets}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{readPallets()}{readPallets()}}
+{\footnotesize\ttfamily \label{functions_8h_af331087136ecc7f884f5612873f953b7} 
+std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ read\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Reads pallet data from a CSV file. 
+
+This function opens a CSV file, skips the header, and reads each line to extract pallet ID, weight, and profit. It returns a vector of \doxylink{struct_pallet}{Pallet} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the CSV file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Pallet$>$ List of pallets read from the file. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_af331087136ecc7f884f5612873f953b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_adc0138cd22cf4d3375b458a1c9522f0c}\index{functions.h@{functions.h}!readTruckAndPallets@{readTruckAndPallets}}
+\index{readTruckAndPallets@{readTruckAndPallets}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{readTruckAndPallets()}{readTruckAndPallets()}}
+{\footnotesize\ttfamily \label{functions_8h_adc0138cd22cf4d3375b458a1c9522f0c} 
+\mbox{\hyperlink{struct_truck}{Truck}} read\+Truck\+And\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Reads the truck\textquotesingle{}s capacity and number of pallets from a CSV file. 
+
+The function skips the header line and reads the second line, extracting the truck capacity and the number of pallets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the CSV file containing the truck data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_truck}{Truck} Struct with the loaded capacity and pallet count. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_adc0138cd22cf4d3375b458a1c9522f0c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a547646815560a705ed2ab461dbf46d04}\index{functions.h@{functions.h}!showMainMenu@{showMainMenu}}
+\index{showMainMenu@{showMainMenu}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{showMainMenu()}{showMainMenu()}}
+{\footnotesize\ttfamily \label{functions_8h_a547646815560a705ed2ab461dbf46d04} 
+void show\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu of the application. 
+
+This function prints the program title and calls \doxylink{functions_8h_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu()} to begin user interaction. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a547646815560a705ed2ab461dbf46d04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a547646815560a705ed2ab461dbf46d04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a1b2e2e4b39e3ac9573ec033cad0d8810}\index{functions.h@{functions.h}!sortPallets@{sortPallets}}
+\index{sortPallets@{sortPallets}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{sortPallets()}{sortPallets()}}
+{\footnotesize\ttfamily \label{functions_8h_a1b2e2e4b39e3ac9573ec033cad0d8810} 
+void sort\+Pallets (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Sorts pallets by their pallet\+ID in ascending order. 
+
+This is used to maintain consistent order when displaying pallets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of pallets to be sorted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a1b2e2e4b39e3ac9573ec033cad0d8810_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a84083ac10efa2099da930cbaf6052c8d}\index{functions.h@{functions.h}!sortPallets\_ratio@{sortPallets\_ratio}}
+\index{sortPallets\_ratio@{sortPallets\_ratio}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{sortPallets\_ratio()}{sortPallets\_ratio()}}
+{\footnotesize\ttfamily \label{functions_8h_a84083ac10efa2099da930cbaf6052c8d} 
+void sort\+Pallets\+\_\+ratio (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Sorts pallets in descending order of profit-\/to-\/weight ratio. 
+
+This function is used to prioritize pallets that provide the highest profit per unit of weight, which is essential for the greedy approach to the 0/1 knapsack problem. In case of ties, pallets are sorted by descending weight, and then ascending pallet ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of pallets to be sorted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a84083ac10efa2099da930cbaf6052c8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{functions_8h_a074ab23d57728d234af22335f23dac5d}\index{functions.h@{functions.h}!sumIndices@{sumIndices}}
+\index{sumIndices@{sumIndices}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{sumIndices()}{sumIndices()}}
+{\footnotesize\ttfamily \label{functions_8h_a074ab23d57728d234af22335f23dac5d} 
+int sum\+Indices (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{subset}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{all\+Pallets}{}\end{DoxyParamCaption})}
+
+
+
+Computes the sum of indices of a subset of pallets within the full pallet list. 
+
+This helper function is used to break ties between equally profitable combinations by preferring the one with the lower sum of original indices (i.\+e., chosen earlier).
+
+
+\begin{DoxyParams}{Parameters}
+{\em subset} & The selected subset of pallets being evaluated. \\
+\hline
+{\em all\+Pallets} & The full list of available pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of the indices of the subset pallets within the all\+Pallets vector. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{functions_8h_a074ab23d57728d234af22335f23dac5d_icgraph}
+\end{center}
+\end{figure}

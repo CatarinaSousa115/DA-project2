@@ -1,0 +1,28 @@
+<map id="printPalletDetails" name="printPalletDetails">
+<area shape="rect" id="Node000001" title="Prints details about the selected pallets." alt="" coords="859,104,979,130"/>
+<area shape="rect" id="Node000002" href="$brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="696,153,779,179"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="855,137,780,158,778,152,853,132"/>
+<area shape="rect" id="Node000008" href="$dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="664,5,811,31"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="888,96,852,70,810,45,785,34,787,29,812,40,855,65,892,92"/>
+<area shape="rect" id="Node000009" href="$greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="680,55,795,80"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="853,102,787,84,788,78,855,97"/>
+<area shape="rect" id="Node000010" href="$hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="682,104,793,130"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="844,120,794,120,794,114,844,114"/>
+<area shape="rect" id="Node000003" href="$menu_8cpp.html#aa8866811b98525a20975ec74689ae166" title="Allows the user to choose which algorithm to apply for pallet packing optimization." alt="" coords="497,79,616,104"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="680,151,663,145,582,107,585,103,665,140,682,146"/>
+<area shape="rect" id="Node000004" href="$menu_8cpp.html#a59c2926dd9b0968badf463aaf4f91422" title="Prompts the user to select a dataset and loads the corresponding files." alt="" coords="355,52,449,78"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="482,81,449,76,450,70,482,76"/>
+<area shape="rect" id="Node000007" href="$restart_or_exit_8cpp.html#ab17533eaaae8ec59a61793733ac91cb6" title="Prompts the user to either test another dataset or run another algorithm." alt="" coords="5,128,147,154"/>
+<area shape="poly" id="edge10_Node000003_Node000007" title=" " alt="" coords="482,102,147,136,147,131,482,96"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="428,39,419,33,402,31,387,33,378,37,377,43,381,50,376,53,371,43,374,34,385,28,402,25,421,28,431,35"/>
+<area shape="rect" id="Node000005" href="$menu_8cpp.html#a547646815560a705ed2ab461dbf46d04" title="Displays the main menu of the application." alt="" coords="195,52,307,78"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="339,68,307,68,307,62,339,62"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Program entry point." alt="" coords="51,52,101,78"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="179,68,101,68,101,62,179,62"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="206,87,108,130,106,125,204,82"/>
+<area shape="poly" id="edge9_Node000007_Node000001" title=" " alt="" coords="126,157,182,175,250,194,325,208,401,214,558,214,687,216,742,209,810,189,837,176,863,160,902,128,906,132,866,164,840,181,812,194,743,215,687,222,558,219,401,219,324,214,249,199,180,181,125,162"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="162,141,695,162,695,167,162,147"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="680,39,665,45,586,80,583,76,663,40,678,34"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="664,80,616,86,616,81,664,75"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="666,110,616,102,616,97,667,104"/>
+</map>

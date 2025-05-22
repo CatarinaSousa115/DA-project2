@@ -1,0 +1,28 @@
+<map id="promptRestartOrExit" name="promptRestartOrExit">
+<area shape="rect" id="Node000001" title="Prompts the user to either test another dataset or run another algorithm." alt="" coords="935,155,1077,180"/>
+<area shape="rect" id="Node000002" href="$brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="604,5,687,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="974,147,933,120,886,94,834,72,780,54,687,30,688,24,781,49,836,67,888,89,936,115,977,143"/>
+<area shape="rect" id="Node000007" href="$print_pallet_details_8cpp.html#afaf0a4d2e9042535426e2a7774dda8a8" title="Prints details about the selected pallets." alt="" coords="767,104,887,130"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="943,152,874,133,876,128,944,147"/>
+<area shape="rect" id="Node000003" href="$menu_8cpp.html#aa8866811b98525a20975ec74689ae166" title="Allows the user to choose which algorithm to apply for pallet packing optimization." alt="" coords="405,129,524,155"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="590,36,573,44,544,65,518,88,478,131,475,127,514,85,541,61,570,40,588,31"/>
+<area shape="poly" id="edge8_Node000003_Node000001" title=" " alt="" coords="501,160,535,177,572,189,622,197,673,202,775,201,869,191,944,178,945,184,870,196,776,206,673,207,621,203,571,194,533,182,499,165"/>
+<area shape="rect" id="Node000004" href="$menu_8cpp.html#a59c2926dd9b0968badf463aaf4f91422" title="Prompts the user to select a dataset and loads the corresponding files." alt="" coords="263,167,357,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="394,162,358,171,357,166,393,157"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="336,154,327,148,310,145,295,147,286,152,285,158,289,165,284,168,279,158,282,148,293,142,310,140,329,143,339,149"/>
+<area shape="rect" id="Node000005" href="$menu_8cpp.html#a547646815560a705ed2ab461dbf46d04" title="Displays the main menu of the application." alt="" coords="103,204,215,230"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="249,197,214,206,213,201,247,192"/>
+<area shape="poly" id="edge7_Node000005_Node000001" title=" " alt="" coords="225,231,336,254,400,262,463,265,647,265,695,262,743,255,836,232,917,204,976,179,978,183,919,209,838,237,744,260,695,268,647,270,463,270,399,267,335,259,224,237"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Program entry point." alt="" coords="5,204,55,230"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="87,220,55,220,55,214,87,214"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="796,96,760,70,718,45,686,32,688,27,720,40,763,65,800,92"/>
+<area shape="rect" id="Node000008" href="$dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="572,55,719,80"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="761,102,695,84,696,78,763,97"/>
+<area shape="rect" id="Node000009" href="$greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="588,104,703,130"/>
+<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="752,120,703,120,703,114,752,114"/>
+<area shape="rect" id="Node000010" href="$hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="590,153,701,179"/>
+<area shape="poly" id="edge15_Node000007_Node000010" title=" " alt="" coords="763,137,696,155,695,150,761,132"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="587,88,573,94,493,131,490,126,571,89,585,83"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="572,130,524,137,524,131,572,124"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="574,159,524,153,524,147,575,154"/>
+</map>

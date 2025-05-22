@@ -1,0 +1,130 @@
+\doxysection{code/menu/menu.cpp File Reference}
+\hypertarget{menu_8cpp}{}\label{menu_8cpp}\index{code/menu/menu.cpp@{code/menu/menu.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for menu.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8cpp_a547646815560a705ed2ab461dbf46d04}{show\+Main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu of the application. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Prompts the user to select a dataset and loads the corresponding files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8cpp_aa8866811b98525a20975ec74689ae166}{choose\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Allows the user to choose which algorithm to apply for pallet packing optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8cpp_aa8866811b98525a20975ec74689ae166}\index{menu.cpp@{menu.cpp}!chooseAlgorithm@{chooseAlgorithm}}
+\index{chooseAlgorithm@{chooseAlgorithm}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{chooseAlgorithm()}{chooseAlgorithm()}}
+{\footnotesize\ttfamily \label{menu_8cpp_aa8866811b98525a20975ec74689ae166} 
+void choose\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Allows the user to choose which algorithm to apply for pallet packing optimization. 
+
+Presents a list of available algorithms and calls the corresponding function based on user selection.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck configuration including capacity and number of pallets. \\
+\hline
+{\em pallets} & The list of available pallets to consider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Brute-\/force method\+: tests all possible combinations (may be slow).
+
+Dynamic programming\+: uses DP table to find optimal solution efficiently.
+
+Greedy algorithm\+: selects pallets based on profit-\/to-\/weight ratio.
+
+Hybrid algorithm\+: combines greedy and DP for improved performance.
+
+Exit\+: terminates the program.
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_aa8866811b98525a20975ec74689ae166_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_aa8866811b98525a20975ec74689ae166_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8cpp_a59c2926dd9b0968badf463aaf4f91422}\index{menu.cpp@{menu.cpp}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily \label{menu_8cpp_a59c2926dd9b0968badf463aaf4f91422} 
+void display\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user to select a dataset and loads the corresponding files. 
+
+This function constructs the filenames for the truck and pallet datasets based on user input, validates the files, loads the data, and proceeds to algorithm selection. Check if both files could be opened; if not, prompt user to try again.
+
+Read truck data from the selected CSV file.
+
+Read pallet data from the selected CSV file.Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_a59c2926dd9b0968badf463aaf4f91422_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_a59c2926dd9b0968badf463aaf4f91422_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{menu_8cpp_a547646815560a705ed2ab461dbf46d04}\index{menu.cpp@{menu.cpp}!showMainMenu@{showMainMenu}}
+\index{showMainMenu@{showMainMenu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{showMainMenu()}{showMainMenu()}}
+{\footnotesize\ttfamily \label{menu_8cpp_a547646815560a705ed2ab461dbf46d04} 
+void show\+Main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the main menu of the application. 
+
+This function prints the program title and calls \doxylink{functions_8h_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu()} to begin user interaction. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_a547646815560a705ed2ab461dbf46d04_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8cpp_a547646815560a705ed2ab461dbf46d04_icgraph}
+\end{center}
+\end{figure}

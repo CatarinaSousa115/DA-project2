@@ -1,0 +1,155 @@
+\doxysection{code/algorithms/brute\+\_\+force.cpp File Reference}
+\hypertarget{brute__force_8cpp}{}\label{brute__force_8cpp}\index{code/algorithms/brute\_force.cpp@{code/algorithms/brute\_force.cpp}}
+
+
+Implements the brute-\/force algorithm for the 0/1 knapsack problem.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for brute\+\_\+force.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{brute__force_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{brute__force_8cpp_a69edcf63a452d0c85b37bc82c233e5f9}{brute\+Force}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using brute-\/force approach. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{brute__force_8cpp_a074ab23d57728d234af22335f23dac5d}{sum\+Indices}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&subset, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&all\+Pallets)
+\begin{DoxyCompactList}\small\item\em Computes the sum of indices of a subset of pallets within the full pallet list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{brute__force_8cpp_a60a210b47c158323349fd5fdd12670a7}{backtrack}} (const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets, int max\+Weight, int index, int current\+Weight, int current\+Profit, std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&current\+Pallets, std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&best\+Pallets, int \&max\+Profit)
+\begin{DoxyCompactList}\small\item\em Recursive helper function to generate all possible combinations of pallets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the brute-\/force algorithm for the 0/1 knapsack problem. 
+
+Contains the main brute\+Force function and its recursive helper (backtrack). This algorithm explores all possible combinations of pallets to find the most profitable subset that fits within the truck\textquotesingle{}s weight capacity. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{brute__force_8cpp_a60a210b47c158323349fd5fdd12670a7}\index{brute\_force.cpp@{brute\_force.cpp}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_a60a210b47c158323349fd5fdd12670a7} 
+void backtrack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{, }\item[{int}]{max\+Weight}{, }\item[{int}]{index}{, }\item[{int}]{current\+Weight}{, }\item[{int}]{current\+Profit}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{current\+Pallets}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{best\+Pallets}{, }\item[{int \&}]{max\+Profit}{}\end{DoxyParamCaption})}
+
+
+
+Recursive helper function to generate all possible combinations of pallets. 
+
+This function uses backtracking to explore all possible subsets of pallets, updating the combination with the highest profit that respects the truck\textquotesingle{}s weight limit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of available \doxylink{struct_pallet}{Pallet} objects. \\
+\hline
+{\em max\+Weight} & Maximum weight capacity of the truck. \\
+\hline
+{\em index} & Current index in the pallets vector. \\
+\hline
+{\em current\+Weight} & Accumulated weight of the current combination. \\
+\hline
+{\em current\+Profit} & Accumulated profit of the current combination. \\
+\hline
+{\em current\+Pallets} & Temporary vector holding the current combination of pallets. \\
+\hline
+{\em best\+Pallets} & Vector storing the best combination of pallets found so far. \\
+\hline
+{\em max\+Profit} & Reference to the highest profit found. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{brute__force_8cpp_a60a210b47c158323349fd5fdd12670a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{brute__force_8cpp_a60a210b47c158323349fd5fdd12670a7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{brute__force_8cpp_a69edcf63a452d0c85b37bc82c233e5f9}\index{brute\_force.cpp@{brute\_force.cpp}!bruteForce@{bruteForce}}
+\index{bruteForce@{bruteForce}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{bruteForce()}{bruteForce()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_a69edcf63a452d0c85b37bc82c233e5f9} 
+void brute\+Force (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using brute-\/force approach. 
+
+This function tries every possible combination of pallets to find the subset with the maximum profit that fits within the truck\textquotesingle{}s weight capacity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object containing the capacity and number of pallets. \\
+\hline
+{\em pallets} & A vector of \doxylink{struct_pallet}{Pallet} objects available to choose from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(2\texorpdfstring{$^\wedge$}{\string^}n), where n is the number of pallets. 
+
+Space complexity\+: O(n), where n is the number of pallets (due to the subset vectors). 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{brute__force_8cpp_a69edcf63a452d0c85b37bc82c233e5f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{brute__force_8cpp_a69edcf63a452d0c85b37bc82c233e5f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{brute__force_8cpp_a074ab23d57728d234af22335f23dac5d}\index{brute\_force.cpp@{brute\_force.cpp}!sumIndices@{sumIndices}}
+\index{sumIndices@{sumIndices}!brute\_force.cpp@{brute\_force.cpp}}
+\doxysubsubsection{\texorpdfstring{sumIndices()}{sumIndices()}}
+{\footnotesize\ttfamily \label{brute__force_8cpp_a074ab23d57728d234af22335f23dac5d} 
+int sum\+Indices (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{subset}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{all\+Pallets}{}\end{DoxyParamCaption})}
+
+
+
+Computes the sum of indices of a subset of pallets within the full pallet list. 
+
+This helper function is used to break ties between equally profitable combinations by preferring the one with the lower sum of original indices (i.\+e., chosen earlier).
+
+
+\begin{DoxyParams}{Parameters}
+{\em subset} & The selected subset of pallets being evaluated. \\
+\hline
+{\em all\+Pallets} & The full list of available pallets. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of the indices of the subset pallets within the all\+Pallets vector. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{brute__force_8cpp_a074ab23d57728d234af22335f23dac5d_icgraph}
+\end{center}
+\end{figure}

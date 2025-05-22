@@ -1,0 +1,73 @@
+\doxysection{code/algorithms/hybrid\+\_\+algorithm.cpp File Reference}
+\hypertarget{hybrid__algorithm_8cpp}{}\label{hybrid__algorithm_8cpp}\index{code/algorithms/hybrid\_algorithm.cpp@{code/algorithms/hybrid\_algorithm.cpp}}
+
+
+Implements a hybrid algorithm combining greedy and dynamic programming for the 0/1 knapsack problem.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for hybrid\+\_\+algorithm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hybrid__algorithm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hybrid__algorithm_8cpp_ab6b0743f8f01b3ae22e6b3aeeabd9a3c}{hybrid\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Hybrid algorithm combining greedy and dynamic programming approaches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a hybrid algorithm combining greedy and dynamic programming for the 0/1 knapsack problem. 
+
+First runs a greedy heuristic to get a baseline profit and then uses dynamic programming with pruning based on the greedy profit to find an optimal or improved solution. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hybrid__algorithm_8cpp_ab6b0743f8f01b3ae22e6b3aeeabd9a3c}\index{hybrid\_algorithm.cpp@{hybrid\_algorithm.cpp}!hybridAlgorithm@{hybridAlgorithm}}
+\index{hybridAlgorithm@{hybridAlgorithm}!hybrid\_algorithm.cpp@{hybrid\_algorithm.cpp}}
+\doxysubsubsection{\texorpdfstring{hybridAlgorithm()}{hybridAlgorithm()}}
+{\footnotesize\ttfamily \label{hybrid__algorithm_8cpp_ab6b0743f8f01b3ae22e6b3aeeabd9a3c} 
+void hybrid\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Hybrid algorithm combining greedy and dynamic programming approaches. 
+
+Executes a greedy algorithm to get an initial solution and profit, then runs a dynamic programming algorithm with pruning to find an optimal or improved solution. Compares the final result with the greedy one.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with a defined capacity. \\
+\hline
+{\em pallets} & The list of available pallets with weight and profit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: Depends on pruning efficiency. Worst-\/case\+: O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck capacity. Best-\/case\+: close to O(n log n), leveraging greedy shortcut. 
+
+Space complexity\+: O(n \texorpdfstring{$\ast$}{*} W), due to the DP table and auxiliary structures. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hybrid__algorithm_8cpp_ab6b0743f8f01b3ae22e6b3aeeabd9a3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hybrid__algorithm_8cpp_ab6b0743f8f01b3ae22e6b3aeeabd9a3c_icgraph}
+\end{center}
+\end{figure}

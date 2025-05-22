@@ -1,0 +1,57 @@
+\doxysection{code/menu/restart\+Or\+Exit.cpp File Reference}
+\hypertarget{restart_or_exit_8cpp}{}\label{restart_or_exit_8cpp}\index{code/menu/restartOrExit.cpp@{code/menu/restartOrExit.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for restart\+Or\+Exit.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{restart_or_exit_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{restart_or_exit_8cpp_ab17533eaaae8ec59a61793733ac91cb6}{prompt\+Restart\+Or\+Exit}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Prompts the user to either test another dataset or run another algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{restart_or_exit_8cpp_ab17533eaaae8ec59a61793733ac91cb6}\index{restartOrExit.cpp@{restartOrExit.cpp}!promptRestartOrExit@{promptRestartOrExit}}
+\index{promptRestartOrExit@{promptRestartOrExit}!restartOrExit.cpp@{restartOrExit.cpp}}
+\doxysubsubsection{\texorpdfstring{promptRestartOrExit()}{promptRestartOrExit()}}
+{\footnotesize\ttfamily \label{restart_or_exit_8cpp_ab17533eaaae8ec59a61793733ac91cb6} 
+void prompt\+Restart\+Or\+Exit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user to either test another dataset or run another algorithm. 
+
+This function presents the user with the option to either test another dataset or run another algorithm. Based on the user\textquotesingle{}s input, it either returns to the main menu, reruns the algorithm selection, or exits the program.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & A reference to the \doxylink{struct_truck}{Truck} object, used if the user opts to run another algorithm. \\
+\hline
+{\em pallets} & A constant reference to a vector of \doxylink{struct_pallet}{Pallet} objects, used if the user opts to run another algorithm. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{restart_or_exit_8cpp_ab17533eaaae8ec59a61793733ac91cb6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{restart_or_exit_8cpp_ab17533eaaae8ec59a61793733ac91cb6_icgraph}
+\end{center}
+\end{figure}

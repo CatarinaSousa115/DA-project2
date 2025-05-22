@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['backtrack_0',['backtrack',['../brute__force_8cpp.html#a60a210b47c158323349fd5fdd12670a7',1,'backtrack(const std::vector&lt; Pallet &gt; &amp;pallets, int maxWeight, int index, int currentWeight, int currentProfit, std::vector&lt; Pallet &gt; &amp;currentPallets, std::vector&lt; Pallet &gt; &amp;bestPallets, int &amp;maxProfit):&#160;brute_force.cpp'],['../functions_8h.html#a60a210b47c158323349fd5fdd12670a7',1,'backtrack(const std::vector&lt; Pallet &gt; &amp;pallets, int maxWeight, int index, int currentWeight, int currentProfit, std::vector&lt; Pallet &gt; &amp;currentPallets, std::vector&lt; Pallet &gt; &amp;bestPallets, int &amp;maxProfit):&#160;brute_force.cpp']]],
+  ['brute_5fforce_2ecpp_1',['brute_force.cpp',['../brute__force_8cpp.html',1,'']]],
+  ['bruteforce_2',['bruteForce',['../brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9',1,'bruteForce(const Truck &amp;truck, const std::vector&lt; Pallet &gt; &amp;pallets):&#160;brute_force.cpp'],['../functions_8h.html#a69edcf63a452d0c85b37bc82c233e5f9',1,'bruteForce(const Truck &amp;truck, const std::vector&lt; Pallet &gt; &amp;pallets):&#160;brute_force.cpp']]]
+];
