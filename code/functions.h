@@ -156,6 +156,11 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
  *
  * @param truck The truck object with a defined capacity.
  * @param pallets The list of available pallets with weight and profit.
+ *
+ * @note Time complexity: Depends on pruning efficiency.
+ *       Worst-case: O(n * W), where n is the number of pallets and W is the truck capacity.
+ *       Best-case: close to O(n log n), leveraging greedy shortcut.
+ * @note Space complexity: O(n * W), due to the DP table and auxiliary structures.
  */
 void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets);
 
