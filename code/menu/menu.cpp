@@ -8,7 +8,9 @@
 
 void showMainMenu()
 {
-    std::cout << "\n=== Delivery Truck Pallet Packing Optimization ===\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║   Delivery Truck Pallet Packing Optimization   ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
     displayMenu();
 }
 
@@ -65,20 +67,24 @@ void chooseAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     std::string input;
     char choice;
 
-    std::cout << "\n=== Select the algorithm to apply ===\n";
-    std::cout << "[1] Brute-force (exhaustive)\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║             SELECT ALGORITHM TO RUN            ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
+    std::cout << "[1] Brute-force (exhaustive search)\n";
     std::cout << "[2] Dynamic programming\n";
     std::cout << "[3] Greedy algorithm\n";
-    std::cout << "[4] Hybrid algorithm\n";
+    std::cout << "[4] Hybrid algorithm (Greedy + DP)\n";
     std::cout << "[5] Exit\n";
-    std::cout << "=====================================\n";
+    std::cout << "--------------------------------------------------\n";
     std::cout << "Your choice: ";
     std::cin >> input;
+    
     while (input.size() != 1 || input[0] < '1' || input[0] > '5')
     {
         std::cout << "\nInvalid option. Please choose between 1 and 5: ";
         std::cin >> input;
     }
+
     choice = input[0];
 
     switch (choice)

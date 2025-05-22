@@ -15,7 +15,9 @@
 
 void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
 {
-    std::cout << "\n=== Brute-force Algorithm ===\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║              BRUTE-FORCE ALGORITHM             ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
     auto start = std::chrono::high_resolution_clock::now();
     char choice;
 
@@ -28,29 +30,34 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
     }
 
     int maxProfit = 0;
-    std::vector<Pallet> bestPallets;
+    std::vector<Pallet> usedPallets;
     std::vector<Pallet> currentPallets;
 
     // Start backtracking to find the best subset of pallets with maximum profit
-    backtrack(pallets, maxWeight, 0, 0, 0, currentPallets, bestPallets, maxProfit);
+    backtrack(pallets, maxWeight, 0, 0, 0, currentPallets, usedPallets, maxProfit);
 
     // If no valid subset was found (i.e., all exceed truck capacity)
-    if (bestPallets.empty())
+    if (usedPallets.empty())
     {
         std::cout << "No valid combination of pallets found within capacity.\n";
         promptRestartOrExit(truck, pallets);
         return;
     }
+    
+    auto end = std::chrono::high_resolution_clock::now();
 
     std::cout << "Maximum profit: " << maxProfit << "\n";
 
-    auto end = std::chrono::high_resolution_clock::now();
+    std::cout << "Number of pallets: " << usedPallets.size() << "\n";
+
     std::cout << "Execution time: "
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
 
+    std::cout << "-------------------- PALLETS: --------------------\n";
+
     // Print the pallets selected as the optimal solution
-    printPalletDetails(bestPallets, pallets, truck);
+    printPalletDetails(usedPallets, pallets, truck);
 }
 
 int sumIndices(const std::vector<Pallet> &subset, const std::vector<Pallet> &allPallets)

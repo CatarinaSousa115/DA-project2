@@ -15,7 +15,9 @@
 
 void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
 {
-    std::cout << "\n=== Dynamic Programming Algorithm ===\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║          DYNAMIC PROGRAMMING ALGORITHM         ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
     auto start = std::chrono::high_resolution_clock::now();
 
     int maxWeight = truck.capacity;
@@ -135,13 +137,18 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     // Reverse to get the order of pallets as selected
     std::reverse(usedPallets.begin(), usedPallets.end());
 
+    auto end = std::chrono::high_resolution_clock::now();
+    
     // Output the results: maximum profit and execution time
     std::cout << "Maximum profit: " << bestProfitAtWeight[n][maxWeight] << "\n";
 
-    auto end = std::chrono::high_resolution_clock::now();
+    std::cout << "Number of pallets: " << usedPallets.size() << "\n";
+
     std::cout << "Execution time: "
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
+
+    std::cout << "-------------------- PALLETS: --------------------\n";
 
     printPalletDetails(usedPallets, pallets, truck);
 }

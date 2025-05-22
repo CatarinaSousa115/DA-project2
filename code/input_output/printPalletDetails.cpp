@@ -8,7 +8,5 @@ void printPalletDetails(const std::vector<Pallet> &bestPallets, const std::vecto
         std::cout << pallet.palletID << ", " << pallet.weight << ", " << pallet.profit << "\n";
     }
 
-    std::cout << "\n";
-
     promptRestartOrExit(truck, pallets);
 }

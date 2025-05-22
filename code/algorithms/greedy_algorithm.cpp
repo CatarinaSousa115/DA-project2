@@ -16,7 +16,9 @@
 
 void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
-    std::cout << "\n=== Greedy Algorithm ===\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║                GREEDY ALGORITHM                ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
     auto start = std::chrono::high_resolution_clock::now();
 
     std::vector<Pallet> usedPallets;
@@ -45,14 +47,19 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     }
 
     sortPallets(usedPallets);
+    
+    auto end = std::chrono::high_resolution_clock::now();
 
     std::cout << "Maximum profit: " << maxProfit << "\n";
 
-    auto end = std::chrono::high_resolution_clock::now();
-
+    std::cout << "Number of pallets: " << usedPallets.size() << "\n";
+    
     std::cout << "Execution time: "
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
+              
+              std::cout << "-------------------- PALLETS: --------------------\n";
+
     printPalletDetails(usedPallets, pallets, truck);
 }
 

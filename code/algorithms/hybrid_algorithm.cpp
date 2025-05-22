@@ -14,7 +14,10 @@
 
 void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 {
-    std::cout << "\n=== Hybrid Algorithm ===\n";
+    std::cout << "\n╔════════════════════════════════════════════════╗\n";
+    std::cout << "║                HYBRID ALGORITHM                ║\n";
+    std::cout << "╚════════════════════════════════════════════════╝\n";
+
     auto start = std::chrono::high_resolution_clock::now();
 
     if (pallets.empty() || truck.capacity <= 0)
@@ -91,46 +94,49 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     // Backtrack to find the chosen pallets
     int resProfit = dp[n][W];
     int w = W;
-    std::vector<Pallet> chosenPallets;
+    std::vector<Pallet> usedPallets;
 
     for (int i = n; i > 0 && resProfit > 0; --i)
     {
         if (dp[i][w] != dp[i - 1][w])
         {
-            chosenPallets.push_back(pallets[i - 1]);
+            usedPallets.push_back(pallets[i - 1]);
             w -= pallets[i - 1].weight;
             resProfit -= pallets[i - 1].profit;
         }
     }
 
-    std::reverse(chosenPallets.begin(), chosenPallets.end());
-    sortPallets(chosenPallets);
+    std::reverse(usedPallets.begin(), usedPallets.end());
+    sortPallets(usedPallets);
 
     auto end = std::chrono::high_resolution_clock::now();
 
     // Output results
     int totalProfit = dp[n][W];
     int totalWeight = 0;
-    for (const auto &p : chosenPallets)
+    for (const auto &p : usedPallets)
         totalWeight += p.weight;
 
     std::cout << "Maximum profit: " << totalProfit << "\n";
+    
+    std::cout << "Number of pallets: " << usedPallets.size() << "\n";
 
     std::cout << "Execution time: "
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
 
+    std::cout << "--------------------------------------------------\n";
+    
     // Compare with greedy
-    std::cout << "---------------------------------------------\n";
     std::cout << "  Comparison with Greedy Algorithm:\n";
     std::cout << "- Greedy profit: " << greedyProfit << ", weight: " << greedyWeight << "\n";
     if (totalProfit == greedyProfit)
-        std::cout << "- DP solution matches greedy solution profit.\n";
+    std::cout << "- DP solution matches greedy solution profit.\n";
     else if (totalProfit > greedyProfit)
-        std::cout << "- DP solution improves upon greedy solution.\n";
+    std::cout << "- DP solution improves upon greedy solution.\n";
     else
-        std::cout << "- Error: This should never happen - DP is guaranteed to be at least as good as greedy.\n\n";
-    std::cout << "---------------------------------------------\n";
+    std::cout << "- Error: This should never happen - DP is guaranteed to be at least as good as greedy.\n";
+    std::cout << "-------------------- PALLETS: --------------------\n";
 
-    printPalletDetails(chosenPallets, pallets, truck);
+    printPalletDetails(usedPallets, pallets, truck);
 }
