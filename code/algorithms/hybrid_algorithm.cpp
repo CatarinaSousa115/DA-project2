@@ -20,12 +20,6 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    if (pallets.empty() || truck.capacity <= 0)
-    {
-        std::cout << "No pallets available or 0 capacity" << std::endl;
-        return;
-    }
-
     // Run greedy algorithm to get baseline solution (lower bound)
     std::vector<Pallet> sortedPallets = pallets;
     sortPallets_ratio(sortedPallets);
@@ -34,6 +28,12 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     int greedyProfit = 0;
     int greedyWeight = 0;
     std::vector<Pallet> greedySet;
+
+    if (pallets.empty() || maxWeight <= 0)
+    {
+        std::cout << "No pallets available or 0 capacity" << std::endl;
+        return;
+    }
 
     for (const Pallet &pallet : sortedPallets)
     {
@@ -46,63 +46,107 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     }
 
     // Dynamic Programming with proper pruning
-    int n = pallets.size();
-    int W = maxWeight;
+    int size = pallets.size();
 
     // dp[i][w] = max profit using first i pallets with capacity w
-    std::vector<std::vector<int>> dp(n + 1, std::vector<int>(W + 1, 0));
+    std::vector<std::vector<int>> bestProfit(size + 1, std::vector<int>(maxWeight + 1, 0));
+    std::vector<std::vector<int>> minPallets(size + 1, std::vector<int>(maxWeight + 1, INT_MAX));
+    minPallets[0][0] = 0;
+    std::vector<std::vector<int>> sumIndices(size + 1, std::vector<int>(maxWeight + 1, INT_MAX));
+    sumIndices[0][0] = 0;
 
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= size; ++i)
     {
-        int wt = pallets[i - 1].weight;
-        int val = pallets[i - 1].profit;
+        int weight = pallets[i - 1].weight;
+        int profit = pallets[i - 1].profit;
 
-        for (int w = 0; w <= W; ++w)
+        for (int w = 0; w <= maxWeight; ++w)
         {
-            if (wt > w)
+
+            if (w >= weight)
             {
-                dp[i][w] = dp[i - 1][w];
+                int incProf = bestProfit[i - 1][w - weight] + profit;
+                int excProf = bestProfit[i - 1][w];
+
+                int incCount = minPallets[i - 1][w - weight] + 1;
+                int excCount = minPallets[i - 1][w];
+
+                int incID = sumIndices[i - 1][w - weight] + (i - 1);
+                int excID = sumIndices[i - 1][w];
+
+                if (incProf > excProf)
+                {
+                    bestProfit[i][w] = incProf;
+                    minPallets[i][w] = incCount;
+                    sumIndices[i][w] = incID;
+                }
+                else if (incProf < excProf)
+                {
+                    bestProfit[i][w] = excProf;
+                    minPallets[i][w] = excCount;
+                    sumIndices[i][w] = excID;
+                }
+                else
+                {
+                    if (incCount < excCount)
+                    {
+                        bestProfit[i][w] = incProf;
+                        minPallets[i][w] = incCount;
+                        sumIndices[i][w] = incID;
+                    }
+                    else if (incCount > excCount)
+                    {
+                        bestProfit[i][w] = excProf;
+                        minPallets[i][w] = excCount;
+                        sumIndices[i][w] = excID;
+                    }
+                    else
+                    {
+                        if (incID < excID)
+                        {
+                            bestProfit[i][w] = incProf;
+                            minPallets[i][w] = incCount;
+                            sumIndices[i][w] = incID;
+                        }
+                        else
+                        {
+                            bestProfit[i][w] = excProf;
+                            minPallets[i][w] = excCount;
+                            sumIndices[i][w] = excID;
+                        }
+                    }
+                }
             }
             else
             {
-                dp[i][w] = std::max(dp[i - 1][w], dp[i - 1][w - wt] + val);
-            }
-        }
-
-        // Early termination if we've already found a solution better than greedy
-        if (dp[i][W] >= greedyProfit && i < n)
-        {
-            // Check if remaining items can't possibly improve the solution
-            int remainingMaxProfit = 0;
-            int remainingCapacity = W;
-            for (int j = i + 1; j <= n; ++j)
-            {
-                if (pallets[j - 1].weight <= remainingCapacity)
-                {
-                    remainingMaxProfit += pallets[j - 1].profit;
-                    remainingCapacity -= pallets[j - 1].weight;
-                }
-            }
-
-            if (dp[i][W] >= greedyProfit + remainingMaxProfit)
-            {
-                break; // No need to continue
+                bestProfit[i][w] = bestProfit[i - 1][w];
+                minPallets[i][w] = minPallets[i - 1][w];
+                sumIndices[i][w] = sumIndices[i - 1][w];
             }
         }
     }
 
-    // Backtrack to find the chosen pallets
-    int resProfit = dp[n][W];
-    int w = W;
+    // Backtrack to find the chosen pallets (with tie-breaking: profit, count, sumIndices)
+    int w = maxWeight;
     std::vector<Pallet> usedPallets;
-
-    for (int i = n; i > 0 && resProfit > 0; --i)
+    for (int i = size; i > 0 && w > 0; --i)
     {
-        if (dp[i][w] != dp[i - 1][w])
+        int wt = pallets[i - 1].weight;
+        int val = pallets[i - 1].profit;
+
+        if (w >= wt)
         {
-            usedPallets.push_back(pallets[i - 1]);
-            w -= pallets[i - 1].weight;
-            resProfit -= pallets[i - 1].profit;
+            int includeProfit = bestProfit[i - 1][w - wt] + val;
+            int includeCount = minPallets[i - 1][w - wt] + 1;
+            int includeSumIdx = sumIndices[i - 1][w - wt] + (i - 1);
+
+            if (bestProfit[i][w] == includeProfit &&
+                minPallets[i][w] == includeCount &&
+                sumIndices[i][w] == includeSumIdx)
+            {
+                usedPallets.push_back(pallets[i - 1]);
+                w -= wt;
+            }
         }
     }
 
@@ -112,13 +156,13 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     auto end = std::chrono::high_resolution_clock::now();
 
     // Output results
-    int totalProfit = dp[n][W];
+    int totalProfit = bestProfit[size][maxWeight];
     int totalWeight = 0;
     for (const auto &p : usedPallets)
         totalWeight += p.weight;
 
     std::cout << "Maximum profit: " << totalProfit << "\n";
-    
+
     std::cout << "Number of pallets: " << usedPallets.size() << "\n";
 
     std::cout << "Execution time: "
@@ -126,16 +170,16 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
               << " ms\n";
 
     std::cout << "--------------------------------------------------\n";
-    
+
     // Compare with greedy
     std::cout << "  Comparison with Greedy Algorithm:\n";
     std::cout << "- Greedy profit: " << greedyProfit << ", weight: " << greedyWeight << "\n";
     if (totalProfit == greedyProfit)
-    std::cout << "- DP solution matches greedy solution profit.\n";
+        std::cout << "- DP solution matches greedy solution profit.\n";
     else if (totalProfit > greedyProfit)
-    std::cout << "- DP solution improves upon greedy solution.\n";
+        std::cout << "- DP solution improves upon greedy solution.\n";
     else
-    std::cout << "- Error: This should never happen - DP is guaranteed to be at least as good as greedy.\n";
+        std::cout << "- Error: This should never happen - DP is guaranteed to be at least as good as greedy.\n";
     std::cout << "-------------------- PALLETS: --------------------\n";
 
     printPalletDetails(usedPallets, pallets, truck);

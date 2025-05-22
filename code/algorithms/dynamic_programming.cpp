@@ -21,13 +21,13 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     auto start = std::chrono::high_resolution_clock::now();
 
     int maxWeight = truck.capacity;
-    int n = pallets.size();
+    int size = pallets.size();
 
     // Initialize DP tables to store maximum profit, minimum number of pallets, and sum of indices
-    std::vector<std::vector<int>> bestProfitAtWeight(n + 1, std::vector<int>(maxWeight + 1, 0));
-    std::vector<std::vector<int>> minPallets(n + 1, std::vector<int>(maxWeight + 1, INT_MAX));
+    std::vector<std::vector<int>> bestProfit(size + 1, std::vector<int>(maxWeight + 1, 0));
+    std::vector<std::vector<int>> minPallets(size + 1, std::vector<int>(maxWeight + 1, INT_MAX));
     minPallets[0][0] = 0;
-    std::vector<std::vector<int>> sumIndices(n + 1, std::vector<int>(maxWeight + 1, INT_MAX));
+    std::vector<std::vector<int>> sumIndices(size + 1, std::vector<int>(maxWeight + 1, INT_MAX));
     sumIndices[0][0] = 0;
 
     // Handle edge case where there are no pallets or the truck capacity is zero
@@ -38,7 +38,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     }
 
     // Fill DP tables based on each pallet and capacity
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= size; ++i)
     {
         int weight = pallets[i - 1].weight;
         int profit = pallets[i - 1].profit;
@@ -47,56 +47,56 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
             // Check if current pallet can be included for the current weight
             if (w >= weight)
             {
-                int includeProfit = bestProfitAtWeight[i - 1][w - weight] + profit;
-                int excludeProfit = bestProfitAtWeight[i - 1][w];
+                int incProf = bestProfit[i - 1][w - weight] + profit;
+                int excProf = bestProfit[i - 1][w];
 
-                int includeCount = minPallets[i - 1][w - weight] + 1;
-                int excludeCount = minPallets[i - 1][w];
+                int incCount = minPallets[i - 1][w - weight] + 1;
+                int excCount = minPallets[i - 1][w];
 
-                int includeSumIdx = sumIndices[i - 1][w - weight] + (i - 1);
-                int excludeSumIdx = sumIndices[i - 1][w];
+                int incID = sumIndices[i - 1][w - weight] + (i - 1);
+                int excID = sumIndices[i - 1][w];
 
-                if (includeProfit > excludeProfit)
+                if (incProf > excProf)
                 {
-                    bestProfitAtWeight[i][w] = includeProfit;
-                    minPallets[i][w] = includeCount;
-                    sumIndices[i][w] = includeSumIdx;
+                    bestProfit[i][w] = incProf;
+                    minPallets[i][w] = incCount;
+                    sumIndices[i][w] = incID;
                 }
-                else if (includeProfit < excludeProfit)
+                else if (incProf < excProf)
                 {
-                    bestProfitAtWeight[i][w] = excludeProfit;
-                    minPallets[i][w] = excludeCount;
-                    sumIndices[i][w] = excludeSumIdx;
+                    bestProfit[i][w] = excProf;
+                    minPallets[i][w] = excCount;
+                    sumIndices[i][w] = excID;
                 }
                 else
                 {
                     // Tie in profit, break tie by selecting the combination with fewer pallets
-                    if (includeCount < excludeCount)
+                    if (incCount < excCount)
                     {
-                        bestProfitAtWeight[i][w] = includeProfit;
-                        minPallets[i][w] = includeCount;
-                        sumIndices[i][w] = includeSumIdx;
+                        bestProfit[i][w] = incProf;
+                        minPallets[i][w] = incCount;
+                        sumIndices[i][w] = incID;
                     }
-                    else if (includeCount > excludeCount)
+                    else if (incCount > excCount)
                     {
-                        bestProfitAtWeight[i][w] = excludeProfit;
-                        minPallets[i][w] = excludeCount;
-                        sumIndices[i][w] = excludeSumIdx;
+                        bestProfit[i][w] = excProf;
+                        minPallets[i][w] = excCount;
+                        sumIndices[i][w] = excID;
                     }
                     else
                     {
                         // Tie in number of pallets, break tie by selecting the combination with the smallest sum of indices
-                        if (includeSumIdx < excludeSumIdx)
+                        if (incID < excID)
                         {
-                            bestProfitAtWeight[i][w] = includeProfit;
-                            minPallets[i][w] = includeCount;
-                            sumIndices[i][w] = includeSumIdx;
+                            bestProfit[i][w] = incProf;
+                            minPallets[i][w] = incCount;
+                            sumIndices[i][w] = incID;
                         }
                         else
                         {
-                            bestProfitAtWeight[i][w] = excludeProfit;
-                            minPallets[i][w] = excludeCount;
-                            sumIndices[i][w] = excludeSumIdx;
+                            bestProfit[i][w] = excProf;
+                            minPallets[i][w] = excCount;
+                            sumIndices[i][w] = excID;
                         }
                     }
                 }
@@ -104,7 +104,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
             // If the pallet cannot be included, inherit values from the previous row
             else
             {
-                bestProfitAtWeight[i][w] = bestProfitAtWeight[i - 1][w];
+                bestProfit[i][w] = bestProfit[i - 1][w];
                 minPallets[i][w] = minPallets[i - 1][w];
                 sumIndices[i][w] = sumIndices[i - 1][w];
             }
@@ -113,20 +113,20 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     // Reconstruct the solution to find which pallets were used
     std::vector<Pallet> usedPallets;
     int w = maxWeight;
-    for (int i = n; i > 0 && w > 0; --i)
+    for (int i = size; i > 0 && w > 0; --i)
     {
         int weight = pallets[i - 1].weight;
         int profit = pallets[i - 1].profit;
 
         if (w >= weight)
         {
-            int includeProfit = bestProfitAtWeight[i - 1][w - weight] + profit;
-            int includeCount = minPallets[i - 1][w - weight] + 1;
-            int includeSumIdx = sumIndices[i - 1][w - weight] + (i - 1);
+            int incP = bestProfit[i - 1][w - weight] + profit;
+            int incC = minPallets[i - 1][w - weight] + 1;
+            int incS = sumIndices[i - 1][w - weight] + (i - 1);
 
-            if (bestProfitAtWeight[i][w] == includeProfit &&
-                minPallets[i][w] == includeCount &&
-                sumIndices[i][w] == includeSumIdx)
+            if (bestProfit[i][w] == incP &&
+                minPallets[i][w] == incC &&
+                sumIndices[i][w] == incS)
             {
                 usedPallets.push_back(pallets[i - 1]);
                 w -= weight;
@@ -140,7 +140,7 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
     auto end = std::chrono::high_resolution_clock::now();
     
     // Output the results: maximum profit and execution time
-    std::cout << "Maximum profit: " << bestProfitAtWeight[n][maxWeight] << "\n";
+    std::cout << "Maximum profit: " << bestProfit[size][maxWeight] << "\n";
 
     std::cout << "Number of pallets: " << usedPallets.size() << "\n";
 
