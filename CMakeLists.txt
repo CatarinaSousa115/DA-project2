@@ -4,13 +4,13 @@ project(DA_project2)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(DA_project2
-    code/algorithms/brute_force.cpp
-    code/algorithms/dynamic_programming.cpp
-    code/algorithms/greedy_algorithm.cpp
-    code/algorithms/hybrid_algorithm.cpp
+    code/algorithms/bruteForce.cpp
+    code/algorithms/dynamicProgramming.cpp
+    code/algorithms/greedyAlgorithm.cpp
+    code/algorithms/hybridAlgorithm.cpp
     code/input_output/printPalletDetails.cpp
-    code/input_output/read_Pallets_csv.cpp
-    code/input_output/read_TruckAndPallets_csv.cpp
+    code/input_output/readPallets.cpp
+    code/input_output/readTruckAndPallets.cpp
     code/main.cpp
     code/menu/menu.cpp
     code/menu/restartOrExit.cpp

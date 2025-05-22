@@ -3,8 +3,8 @@
 
 #include <string>
 #include <vector>
-#include "structs/Truck.h"
-#include "structs/Pallet.h"
+#include "structs/truck.h"
+#include "structs/pallet.h"
 
 /**
  * @brief Reads the truck's capacity and number of pallets from a CSV file.
