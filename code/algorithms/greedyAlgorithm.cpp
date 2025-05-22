@@ -57,8 +57,6 @@ void greedyAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
     std::cout << "Execution time: "
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
-              
-              std::cout << "-------------------- PALLETS: --------------------\n";
 
     printPalletDetails(usedPallets, pallets, truck);
 }

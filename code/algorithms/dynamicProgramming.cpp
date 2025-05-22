@@ -148,7 +148,5 @@ void dynamicProgramming(const Truck &truck, const std::vector<Pallet> &pallets)
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
 
-    std::cout << "-------------------- PALLETS: --------------------\n";
-
     printPalletDetails(usedPallets, pallets, truck);
 }

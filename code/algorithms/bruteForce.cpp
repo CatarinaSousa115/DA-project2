@@ -54,8 +54,6 @@ void bruteForce(const Truck &truck, const std::vector<Pallet> &pallets)
               << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
 
-    std::cout << "-------------------- PALLETS: --------------------\n";
-
     // Print the pallets selected as the optimal solution
     printPalletDetails(usedPallets, pallets, truck);
 }

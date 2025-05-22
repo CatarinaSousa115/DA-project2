@@ -180,7 +180,6 @@ void hybridAlgorithm(const Truck &truck, const std::vector<Pallet> &pallets)
         std::cout << "- DP solution improves upon greedy solution.\n";
     else
         std::cout << "- Error: This should never happen - DP is guaranteed to be at least as good as greedy.\n";
-    std::cout << "-------------------- PALLETS: --------------------\n";
 
     printPalletDetails(usedPallets, pallets, truck);
 }
