@@ -1,0 +1,51 @@
+\doxysection{code/input\+\_\+output/read\+Truck\+And\+Pallets.cpp File Reference}
+\hypertarget{read_truck_and_pallets_8cpp}{}\label{read_truck_and_pallets_8cpp}\index{code/input\_output/readTruckAndPallets.cpp@{code/input\_output/readTruckAndPallets.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for read\+Truck\+And\+Pallets.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read_truck_and_pallets_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_truck}{Truck}} \mbox{\hyperlink{read_truck_and_pallets_8cpp_adc0138cd22cf4d3375b458a1c9522f0c}{read\+Truck\+And\+Pallets}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Reads the truck\textquotesingle{}s capacity and number of pallets from a CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{read_truck_and_pallets_8cpp_adc0138cd22cf4d3375b458a1c9522f0c}\index{readTruckAndPallets.cpp@{readTruckAndPallets.cpp}!readTruckAndPallets@{readTruckAndPallets}}
+\index{readTruckAndPallets@{readTruckAndPallets}!readTruckAndPallets.cpp@{readTruckAndPallets.cpp}}
+\doxysubsubsection{\texorpdfstring{readTruckAndPallets()}{readTruckAndPallets()}}
+{\footnotesize\ttfamily \label{read_truck_and_pallets_8cpp_adc0138cd22cf4d3375b458a1c9522f0c} 
+\mbox{\hyperlink{struct_truck}{Truck}} read\+Truck\+And\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Reads the truck\textquotesingle{}s capacity and number of pallets from a CSV file. 
+
+The function skips the header line and reads the second line, extracting the truck capacity and the number of pallets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the CSV file containing the truck data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_truck}{Truck} Struct with the loaded capacity and pallet count. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read_truck_and_pallets_8cpp_adc0138cd22cf4d3375b458a1c9522f0c_icgraph}
+\end{center}
+\end{figure}

@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="860,152,773,128,774,122,861,147"/>
 <area shape="rect" id="Node000003" href="$restart_or_exit_8cpp.html#ab17533eaaae8ec59a61793733ac91cb6" title="Prompts the user to either test another dataset or run another algorithm." alt="" coords="678,155,819,180"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="851,170,819,170,819,165,851,165"/>
-<area shape="rect" id="Node000004" href="$brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="346,5,429,31"/>
+<area shape="rect" id="Node000004" href="$brute_force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="346,5,429,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="683,150,676,146,661,132,652,119,643,106,628,94,578,68,524,48,429,26,430,21,525,43,580,63,631,89,647,102,656,116,665,129,679,141,686,145"/>
 <area shape="rect" id="Node000007" href="$print_pallet_details_8cpp.html#afaf0a4d2e9042535426e2a7774dda8a8" title="Prints details about the selected pallets." alt="" coords="509,104,630,130"/>
 <area shape="poly" id="edge9_Node000003_Node000007" title=" " alt="" coords="685,152,616,133,618,128,687,147"/>
@@ -16,11 +16,11 @@
 <area shape="poly" id="edge7_Node000006_Node000001" title=" " alt="" coords="115,229,240,253,313,261,386,265,571,265,618,262,665,255,757,232,836,204,893,179,895,183,838,208,758,237,666,260,618,268,571,270,386,270,313,267,239,258,115,234"/>
 <area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="78,191,70,185,52,183,37,185,28,189,26,195,31,202,26,205,21,195,24,186,35,180,53,177,71,180,81,187"/>
 <area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="539,96,502,70,460,45,429,32,431,27,463,40,505,65,542,92"/>
-<area shape="rect" id="Node000008" href="$dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="314,55,461,80"/>
+<area shape="rect" id="Node000008" href="$dynamic_programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="314,55,461,80"/>
 <area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="504,102,437,84,439,78,505,97"/>
-<area shape="rect" id="Node000009" href="$greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="330,104,445,130"/>
+<area shape="rect" id="Node000009" href="$greedy_algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="330,104,445,130"/>
 <area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="494,120,446,120,446,114,494,114"/>
-<area shape="rect" id="Node000010" href="$hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="332,153,443,179"/>
+<area shape="rect" id="Node000010" href="$hybrid_algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="332,153,443,179"/>
 <area shape="poly" id="edge15_Node000007_Node000010" title=" " alt="" coords="505,137,439,155,437,150,504,132"/>
 <area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="330,88,315,94,235,131,233,126,313,89,328,83"/>
 <area shape="poly" id="edge14_Node000009_Node000005" title=" " alt="" coords="315,130,267,137,266,131,314,124"/>

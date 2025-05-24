@@ -1,12 +1,12 @@
 <map id="printPalletDetails" name="printPalletDetails">
 <area shape="rect" id="Node000001" title="Prints details about the selected pallets." alt="" coords="859,104,979,130"/>
-<area shape="rect" id="Node000002" href="$brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="696,153,779,179"/>
+<area shape="rect" id="Node000002" href="$brute_force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="696,153,779,179"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="855,137,780,158,778,152,853,132"/>
-<area shape="rect" id="Node000008" href="$dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="664,5,811,31"/>
+<area shape="rect" id="Node000008" href="$dynamic_programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="664,5,811,31"/>
 <area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="888,96,852,70,810,45,785,34,787,29,812,40,855,65,892,92"/>
-<area shape="rect" id="Node000009" href="$greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="680,55,795,80"/>
+<area shape="rect" id="Node000009" href="$greedy_algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="680,55,795,80"/>
 <area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="853,102,787,84,788,78,855,97"/>
-<area shape="rect" id="Node000010" href="$hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="682,104,793,130"/>
+<area shape="rect" id="Node000010" href="$hybrid_algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="682,104,793,130"/>
 <area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="844,120,794,120,794,114,844,114"/>
 <area shape="rect" id="Node000003" href="$menu_8cpp.html#aa8866811b98525a20975ec74689ae166" title="Allows the user to choose which algorithm to apply for pallet packing optimization." alt="" coords="497,79,616,104"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="680,151,663,145,582,107,585,103,665,140,682,146"/>

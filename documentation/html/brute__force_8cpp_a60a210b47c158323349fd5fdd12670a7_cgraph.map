@@ -1,6 +1,0 @@
-<map id="backtrack" name="backtrack">
-<area shape="rect" id="Node000001" title="Recursive helper function to generate all possible combinations of pallets." alt="" coords="5,29,84,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="22,30,17,21,20,11,29,5,45,3,61,5,69,12,66,16,59,10,44,8,31,10,24,14,23,20,26,28"/>
-<area shape="rect" id="Node000002" href="$brute__force_8cpp.html#a074ab23d57728d234af22335f23dac5d" title="Computes the sum of indices of a subset of pallets within the full pallet list." alt="" coords="132,29,220,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="84,40,116,40,116,45,84,45"/>
-</map>

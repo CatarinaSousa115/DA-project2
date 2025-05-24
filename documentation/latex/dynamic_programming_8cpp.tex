@@ -1,0 +1,64 @@
+\doxysection{code/algorithms/dynamic\+Programming.cpp File Reference}
+\hypertarget{dynamic_programming_8cpp}{}\label{dynamic_programming_8cpp}\index{code/algorithms/dynamicProgramming.cpp@{code/algorithms/dynamicProgramming.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for dynamic\+Programming.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dynamic_programming_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dynamic_programming_8cpp_a65ced1110e5c23b49889f10d4c390c48}{dynamic\+Programming}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using dynamic programming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynamic_programming_8cpp_a65ced1110e5c23b49889f10d4c390c48}\index{dynamicProgramming.cpp@{dynamicProgramming.cpp}!dynamicProgramming@{dynamicProgramming}}
+\index{dynamicProgramming@{dynamicProgramming}!dynamicProgramming.cpp@{dynamicProgramming.cpp}}
+\doxysubsubsection{\texorpdfstring{dynamicProgramming()}{dynamicProgramming()}}
+{\footnotesize\ttfamily \label{dynamic_programming_8cpp_a65ced1110e5c23b49889f10d4c390c48} 
+void dynamic\+Programming (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using dynamic programming. 
+
+Fills a 2D table where each cell represents the maximum profit achievable using the first i pallets with a given capacity w. Reconstructs the optimal set of pallets based on this table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with the capacity constraint. \\
+\hline
+{\em pallets} & The list of pallets with associated weight and profit values.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(n \texorpdfstring{$\ast$}{*} W), where n is the number of pallets and W is the truck\textquotesingle{}s capacity. 
+
+Space complexity\+: O(n \texorpdfstring{$\ast$}{*} W), due to the 2D DP table. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dynamic_programming_8cpp_a65ced1110e5c23b49889f10d4c390c48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dynamic_programming_8cpp_a65ced1110e5c23b49889f10d4c390c48_icgraph}
+\end{center}
+\end{figure}

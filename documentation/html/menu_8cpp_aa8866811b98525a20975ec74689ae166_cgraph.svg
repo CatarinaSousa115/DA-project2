@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" target="_top" xlink:title="Solves the 0/1 knapsack problem using brute&#45;force approach.">
+<g id="a_Node000002"><a xlink:href="brute_force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" target="_top" xlink:title="Solves the 0/1 knapsack problem using brute&#45;force approach.">
 <polygon fill="white" stroke="#666666" points="211.25,-253.62 148.75,-253.62 148.75,-234.38 211.25,-234.38 211.25,-253.62"/>
 <text text-anchor="middle" x="180" y="-240.12" font-family="Helvetica,sans-Serif" font-size="10.00">bruteForce</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" target="_top" xlink:title="Solves the 0/1 knapsack problem using dynamic programming.">
+<g id="a_Node000011"><a xlink:href="dynamic_programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" target="_top" xlink:title="Solves the 0/1 knapsack problem using dynamic programming.">
 <polygon fill="white" stroke="#666666" points="235.25,-197.62 124.75,-197.62 124.75,-178.38 235.25,-178.38 235.25,-197.62"/>
 <text text-anchor="middle" x="180" y="-184.12" font-family="Helvetica,sans-Serif" font-size="10.00">dynamicProgramming</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" target="_top" xlink:title="Solves the 0/1 knapsack problem using a greedy heuristic.">
+<g id="a_Node000012"><a xlink:href="greedy_algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" target="_top" xlink:title="Solves the 0/1 knapsack problem using a greedy heuristic.">
 <polygon fill="white" stroke="#666666" points="223.25,-160.62 136.75,-160.62 136.75,-141.38 223.25,-141.38 223.25,-160.62"/>
 <text text-anchor="middle" x="180" y="-147.12" font-family="Helvetica,sans-Serif" font-size="10.00">greedyAlgorithm</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" target="_top" xlink:title="Hybrid algorithm combining greedy and dynamic programming approaches.">
+<g id="a_Node000015"><a xlink:href="hybrid_algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" target="_top" xlink:title="Hybrid algorithm combining greedy and dynamic programming approaches.">
 <polygon fill="white" stroke="#666666" points="221.75,-123.62 138.25,-123.62 138.25,-104.38 221.75,-104.38 221.75,-123.62"/>
 <text text-anchor="middle" x="180" y="-110.12" font-family="Helvetica,sans-Serif" font-size="10.00">hybridAlgorithm</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="brute__force_8cpp.html#a60a210b47c158323349fd5fdd12670a7" target="_top" xlink:title="Recursive helper function to generate all possible combinations of pallets.">
+<g id="a_Node000003"><a xlink:href="brute_force_8cpp.html#a60a210b47c158323349fd5fdd12670a7" target="_top" xlink:title="Recursive helper function to generate all possible combinations of pallets.">
 <polygon fill="white" stroke="#666666" points="345.75,-311.62 287,-311.62 287,-292.38 345.75,-292.38 345.75,-311.62"/>
 <text text-anchor="middle" x="316.38" y="-298.12" font-family="Helvetica,sans-Serif" font-size="10.00">backtrack</text>
 </a>
@@ -155,7 +155,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="brute__force_8cpp.html#a074ab23d57728d234af22335f23dac5d" target="_top" xlink:title="Computes the sum of indices of a subset of pallets within the full pallet list.">
+<g id="a_Node000004"><a xlink:href="brute_force_8cpp.html#a074ab23d57728d234af22335f23dac5d" target="_top" xlink:title="Computes the sum of indices of a subset of pallets within the full pallet list.">
 <polygon fill="white" stroke="#666666" points="483.62,-235.62 417.38,-235.62 417.38,-216.38 483.62,-216.38 483.62,-235.62"/>
 <text text-anchor="middle" x="450.5" y="-222.12" font-family="Helvetica,sans-Serif" font-size="10.00">sumIndices</text>
 </a>
@@ -245,7 +245,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="read___pallets__csv_8cpp.html#af331087136ecc7f884f5612873f953b7" target="_top" xlink:title="Reads pallet data from a CSV file.">
+<g id="a_Node000009"><a xlink:href="read_pallets_8cpp.html#af331087136ecc7f884f5612873f953b7" target="_top" xlink:title="Reads pallet data from a CSV file.">
 <polygon fill="white" stroke="#666666" points="852.25,-122.62 787.5,-122.62 787.5,-103.38 852.25,-103.38 852.25,-122.62"/>
 <text text-anchor="middle" x="819.88" y="-109.12" font-family="Helvetica,sans-Serif" font-size="10.00">readPallets</text>
 </a>
@@ -263,7 +263,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="read___truck_and_pallets__csv_8cpp.html#adc0138cd22cf4d3375b458a1c9522f0c" target="_top" xlink:title="Reads the truck&#39;s capacity and number of pallets from a CSV file.">
+<g id="a_Node000010"><a xlink:href="read_truck_and_pallets_8cpp.html#adc0138cd22cf4d3375b458a1c9522f0c" target="_top" xlink:title="Reads the truck&#39;s capacity and number of pallets from a CSV file.">
 <polygon fill="white" stroke="#666666" points="873.25,-85.62 766.5,-85.62 766.5,-66.38 873.25,-66.38 873.25,-85.62"/>
 <text text-anchor="middle" x="819.88" y="-72.12" font-family="Helvetica,sans-Serif" font-size="10.00">readTruckAndPallets</text>
 </a>
@@ -308,7 +308,7 @@
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="greedy__algorithm_8cpp.html#a1b2e2e4b39e3ac9573ec033cad0d8810" target="_top" xlink:title="Sorts pallets by their palletID in ascending order.">
+<g id="a_Node000013"><a xlink:href="greedy_algorithm_8cpp.html#a1b2e2e4b39e3ac9573ec033cad0d8810" target="_top" xlink:title="Sorts pallets by their palletID in ascending order.">
 <polygon fill="white" stroke="#666666" points="347.62,-160.62 285.12,-160.62 285.12,-141.38 347.62,-141.38 347.62,-160.62"/>
 <text text-anchor="middle" x="316.38" y="-147.12" font-family="Helvetica,sans-Serif" font-size="10.00">sortPallets</text>
 </a>
@@ -326,7 +326,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="greedy__algorithm_8cpp.html#a84083ac10efa2099da930cbaf6052c8d" target="_top" xlink:title="Sorts pallets in descending order of profit&#45;to&#45;weight ratio.">
+<g id="a_Node000014"><a xlink:href="greedy_algorithm_8cpp.html#a84083ac10efa2099da930cbaf6052c8d" target="_top" xlink:title="Sorts pallets in descending order of profit&#45;to&#45;weight ratio.">
 <polygon fill="white" stroke="#666666" points="359.62,-123.62 273.12,-123.62 273.12,-104.38 359.62,-104.38 359.62,-123.62"/>
 <text text-anchor="middle" x="316.38" y="-110.12" font-family="Helvetica,sans-Serif" font-size="10.00">sortPallets_ratio</text>
 </a>

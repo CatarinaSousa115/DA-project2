@@ -1,0 +1,51 @@
+\doxysection{code/input\+\_\+output/read\+Pallets.cpp File Reference}
+\hypertarget{read_pallets_8cpp}{}\label{read_pallets_8cpp}\index{code/input\_output/readPallets.cpp@{code/input\_output/readPallets.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for read\+Pallets.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read_pallets_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \mbox{\hyperlink{read_pallets_8cpp_af331087136ecc7f884f5612873f953b7}{read\+Pallets}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Reads pallet data from a CSV file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{read_pallets_8cpp_af331087136ecc7f884f5612873f953b7}\index{readPallets.cpp@{readPallets.cpp}!readPallets@{readPallets}}
+\index{readPallets@{readPallets}!readPallets.cpp@{readPallets.cpp}}
+\doxysubsubsection{\texorpdfstring{readPallets()}{readPallets()}}
+{\footnotesize\ttfamily \label{read_pallets_8cpp_af331087136ecc7f884f5612873f953b7} 
+std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ read\+Pallets (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Reads pallet data from a CSV file. 
+
+This function opens a CSV file, skips the header, and reads each line to extract pallet ID, weight, and profit. It returns a vector of \doxylink{struct_pallet}{Pallet} objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The name of the CSV file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Pallet$>$ List of pallets read from the file. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{read_pallets_8cpp_af331087136ecc7f884f5612873f953b7_icgraph}
+\end{center}
+\end{figure}

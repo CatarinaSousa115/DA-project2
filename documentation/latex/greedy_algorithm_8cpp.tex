@@ -1,0 +1,119 @@
+\doxysection{code/algorithms/greedy\+Algorithm.cpp File Reference}
+\hypertarget{greedy_algorithm_8cpp}{}\label{greedy_algorithm_8cpp}\index{code/algorithms/greedyAlgorithm.cpp@{code/algorithms/greedyAlgorithm.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include "{}../functions.\+h"{}}\newline
+Include dependency graph for greedy\+Algorithm.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{greedy_algorithm_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{greedy_algorithm_8cpp_ac07353f6977284db6277faff5e48d716}{greedy\+Algorithm}} (const \mbox{\hyperlink{struct_truck}{Truck}} \&truck, const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Solves the 0/1 knapsack problem using a greedy heuristic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{greedy_algorithm_8cpp_a84083ac10efa2099da930cbaf6052c8d}{sort\+Pallets\+\_\+ratio}} (std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Sorts pallets in descending order of profit-\/to-\/weight ratio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{greedy_algorithm_8cpp_a1b2e2e4b39e3ac9573ec033cad0d8810}{sort\+Pallets}} (std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&pallets)
+\begin{DoxyCompactList}\small\item\em Sorts pallets by their pallet\+ID in ascending order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{greedy_algorithm_8cpp_ac07353f6977284db6277faff5e48d716}\index{greedyAlgorithm.cpp@{greedyAlgorithm.cpp}!greedyAlgorithm@{greedyAlgorithm}}
+\index{greedyAlgorithm@{greedyAlgorithm}!greedyAlgorithm.cpp@{greedyAlgorithm.cpp}}
+\doxysubsubsection{\texorpdfstring{greedyAlgorithm()}{greedyAlgorithm()}}
+{\footnotesize\ttfamily \label{greedy_algorithm_8cpp_ac07353f6977284db6277faff5e48d716} 
+void greedy\+Algorithm (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_truck}{Truck}} \&}]{truck}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Solves the 0/1 knapsack problem using a greedy heuristic. 
+
+Sorts pallets by profit-\/to-\/weight ratio and selects as many as fit within the truck\textquotesingle{}s capacity. This does not guarantee an optimal solution but is efficient.
+
+
+\begin{DoxyParams}{Parameters}
+{\em truck} & The truck object with a defined capacity. \\
+\hline
+{\em pallets} & The list of available pallets with weight and profit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time complexity\+: O(n log n), where n is the number of pallets (due to sorting). 
+
+Space complexity\+: O(n), for storing sorted and selected pallets. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{greedy_algorithm_8cpp_ac07353f6977284db6277faff5e48d716_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{greedy_algorithm_8cpp_ac07353f6977284db6277faff5e48d716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{greedy_algorithm_8cpp_a1b2e2e4b39e3ac9573ec033cad0d8810}\index{greedyAlgorithm.cpp@{greedyAlgorithm.cpp}!sortPallets@{sortPallets}}
+\index{sortPallets@{sortPallets}!greedyAlgorithm.cpp@{greedyAlgorithm.cpp}}
+\doxysubsubsection{\texorpdfstring{sortPallets()}{sortPallets()}}
+{\footnotesize\ttfamily \label{greedy_algorithm_8cpp_a1b2e2e4b39e3ac9573ec033cad0d8810} 
+void sort\+Pallets (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Sorts pallets by their pallet\+ID in ascending order. 
+
+This is used to maintain consistent order when displaying pallets.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of pallets to be sorted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{greedy_algorithm_8cpp_a1b2e2e4b39e3ac9573ec033cad0d8810_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{greedy_algorithm_8cpp_a84083ac10efa2099da930cbaf6052c8d}\index{greedyAlgorithm.cpp@{greedyAlgorithm.cpp}!sortPallets\_ratio@{sortPallets\_ratio}}
+\index{sortPallets\_ratio@{sortPallets\_ratio}!greedyAlgorithm.cpp@{greedyAlgorithm.cpp}}
+\doxysubsubsection{\texorpdfstring{sortPallets\_ratio()}{sortPallets\_ratio()}}
+{\footnotesize\ttfamily \label{greedy_algorithm_8cpp_a84083ac10efa2099da930cbaf6052c8d} 
+void sort\+Pallets\+\_\+ratio (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_pallet}{Pallet}} $>$ \&}]{pallets}{}\end{DoxyParamCaption})}
+
+
+
+Sorts pallets in descending order of profit-\/to-\/weight ratio. 
+
+This function is used to prioritize pallets that provide the highest profit per unit of weight, which is essential for the greedy approach to the 0/1 knapsack problem. In case of ties, pallets are sorted by descending weight, and then ascending pallet ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & Vector of pallets to be sorted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{greedy_algorithm_8cpp_a84083ac10efa2099da930cbaf6052c8d_icgraph}
+\end{center}
+\end{figure}

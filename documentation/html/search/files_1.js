@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dynamic_5fprogramming_2ecpp_0',['dynamic_programming.cpp',['../dynamic__programming_8cpp.html',1,'']]]
+  ['dynamicprogramming_2ecpp_0',['dynamicProgramming.cpp',['../dynamic_programming_8cpp.html',1,'']]]
 ];

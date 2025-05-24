@@ -7,26 +7,26 @@
 <area shape="poly" id="edge25_Node000003_Node000003" title=" " alt="" coords="284,80,279,70,282,61,293,55,310,53,329,55,339,62,336,66,327,60,310,58,295,60,286,64,285,70,289,78"/>
 <area shape="rect" id="Node000004" href="$menu_8cpp.html#aa8866811b98525a20975ec74689ae166" title="Allows the user to choose which algorithm to apply for pallet packing optimization." alt="" coords="417,192,536,218"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="332,103,445,181,442,186,329,108"/>
-<area shape="rect" id="Node000015" href="$read___pallets__csv_8cpp.html#af331087136ecc7f884f5612873f953b7" title="Reads pallet data from a CSV file." alt="" coords="433,106,520,131"/>
+<area shape="rect" id="Node000015" href="$read_pallets_8cpp.html#af331087136ecc7f884f5612873f953b7" title="Reads pallet data from a CSV file." alt="" coords="433,106,520,131"/>
 <area shape="poly" id="edge26_Node000003_Node000015" title=" " alt="" coords="358,97,419,107,418,112,358,102"/>
-<area shape="rect" id="Node000016" href="$read___truck_and_pallets__csv_8cpp.html#adc0138cd22cf4d3375b458a1c9522f0c" title="Reads the truck&#39;s capacity and number of pallets from a CSV file." alt="" coords="405,56,548,82"/>
+<area shape="rect" id="Node000016" href="$read_truck_and_pallets_8cpp.html#adc0138cd22cf4d3375b458a1c9522f0c" title="Reads the truck&#39;s capacity and number of pallets from a CSV file." alt="" coords="405,56,548,82"/>
 <area shape="poly" id="edge27_Node000003_Node000016" title=" " alt="" coords="358,83,389,79,390,84,358,88"/>
-<area shape="rect" id="Node000005" href="$brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="628,168,711,194"/>
+<area shape="rect" id="Node000005" href="$brute_force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" title="Solves the 0/1 knapsack problem using brute&#45;force approach." alt="" coords="628,168,711,194"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="536,195,612,186,612,191,536,201"/>
-<area shape="rect" id="Node000010" href="$dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="596,218,743,243"/>
+<area shape="rect" id="Node000010" href="$dynamic_programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" title="Solves the 0/1 knapsack problem using dynamic programming." alt="" coords="596,218,743,243"/>
 <area shape="poly" id="edge13_Node000004_Node000010" title=" " alt="" coords="536,210,581,216,580,222,536,216"/>
-<area shape="rect" id="Node000011" href="$greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="612,268,727,294"/>
+<area shape="rect" id="Node000011" href="$greedy_algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" title="Solves the 0/1 knapsack problem using a greedy heuristic." alt="" coords="612,268,727,294"/>
 <area shape="poly" id="edge16_Node000004_Node000011" title=" " alt="" coords="509,216,597,254,615,260,613,265,595,258,507,221"/>
-<area shape="rect" id="Node000014" href="$hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="614,319,725,345"/>
+<area shape="rect" id="Node000014" href="$hybrid_algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" title="Hybrid algorithm combining greedy and dynamic programming approaches." alt="" coords="614,319,725,345"/>
 <area shape="poly" id="edge20_Node000004_Node000014" title=" " alt="" coords="492,217,536,259,565,283,597,304,609,310,606,315,594,309,562,288,532,263,488,221"/>
-<area shape="rect" id="Node000006" href="$brute__force_8cpp.html#a60a210b47c158323349fd5fdd12670a7" title="Recursive helper function to generate all possible combinations of pallets." alt="" coords="812,168,890,194"/>
+<area shape="rect" id="Node000006" href="$brute_force_8cpp.html#a60a210b47c158323349fd5fdd12670a7" title="Recursive helper function to generate all possible combinations of pallets." alt="" coords="812,168,890,194"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="711,179,796,179,796,184,711,184"/>
 <area shape="rect" id="Node000008" href="$print_pallet_details_8cpp.html#afaf0a4d2e9042535426e2a7774dda8a8" title="Prints details about the selected pallets." alt="" coords="791,218,911,243"/>
 <area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="712,190,787,211,786,216,711,195"/>
 <area shape="rect" id="Node000009" href="$restart_or_exit_8cpp.html#ab17533eaaae8ec59a61793733ac91cb6" title="Prompts the user to either test another dataset or run another algorithm." alt="" coords="959,68,1101,94"/>
 <area shape="poly" id="edge12_Node000005_Node000009" title=" " alt="" coords="698,165,790,129,868,109,943,93,944,98,869,114,792,135,700,170"/>
 <area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="821,170,815,160,819,150,831,144,851,142,873,144,884,151,882,156,871,149,851,147,832,149,823,154,820,159,825,167"/>
-<area shape="rect" id="Node000007" href="$brute__force_8cpp.html#a074ab23d57728d234af22335f23dac5d" title="Computes the sum of indices of a subset of pallets within the full pallet list." alt="" coords="986,268,1074,294"/>
+<area shape="rect" id="Node000007" href="$brute_force_8cpp.html#a074ab23d57728d234af22335f23dac5d" title="Computes the sum of indices of a subset of pallets within the full pallet list." alt="" coords="986,268,1074,294"/>
 <area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="890,192,913,203,1000,257,997,262,910,208,887,197"/>
 <area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="891,215,910,204,939,181,966,155,1008,105,1012,109,970,159,943,185,913,209,894,220"/>
 <area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="990,70,930,52,851,31,762,15,671,8,475,8,409,11,343,19,228,40,227,35,343,14,409,6,475,3,671,3,762,9,852,26,931,46,992,65"/>
@@ -34,9 +34,9 @@
 <area shape="poly" id="edge15_Node000010_Node000007" title=" " alt="" coords="729,241,791,253,971,274,970,279,791,259,728,247"/>
 <area shape="poly" id="edge14_Node000010_Node000008" title=" " alt="" coords="744,228,776,228,776,233,744,233"/>
 <area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="717,265,787,246,789,251,719,270"/>
-<area shape="rect" id="Node000012" href="$greedy__algorithm_8cpp.html#a1b2e2e4b39e3ac9573ec033cad0d8810" title="Sorts pallets by their palletID in ascending order." alt="" coords="810,368,893,394"/>
+<area shape="rect" id="Node000012" href="$greedy_algorithm_8cpp.html#a1b2e2e4b39e3ac9573ec033cad0d8810" title="Sorts pallets by their palletID in ascending order." alt="" coords="810,368,893,394"/>
 <area shape="poly" id="edge18_Node000011_Node000012" title=" " alt="" coords="720,292,744,304,760,317,769,330,778,343,793,355,799,359,796,364,789,359,774,346,765,333,756,321,742,309,718,297"/>
-<area shape="rect" id="Node000013" href="$greedy__algorithm_8cpp.html#a84083ac10efa2099da930cbaf6052c8d" title="Sorts pallets in descending order of profit&#45;to&#45;weight ratio." alt="" coords="794,319,909,345"/>
+<area shape="rect" id="Node000013" href="$greedy_algorithm_8cpp.html#a84083ac10efa2099da930cbaf6052c8d" title="Sorts pallets in descending order of profit&#45;to&#45;weight ratio." alt="" coords="794,319,909,345"/>
 <area shape="poly" id="edge19_Node000011_Node000013" title=" " alt="" coords="719,292,789,312,787,317,717,297"/>
 <area shape="poly" id="edge24_Node000014_Node000007" title=" " alt="" coords="687,343,732,376,761,392,792,404,825,413,852,417,879,415,910,404,943,385,971,359,1011,306,1016,309,975,363,946,389,912,409,880,420,852,423,824,418,790,409,759,397,729,380,684,347"/>
 <area shape="poly" id="edge21_Node000014_Node000008" title=" " alt="" coords="714,316,742,304,784,278,821,251,824,256,787,283,744,309,717,321"/>

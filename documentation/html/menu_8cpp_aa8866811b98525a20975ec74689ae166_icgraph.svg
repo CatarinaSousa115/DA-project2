@@ -110,7 +110,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="brute__force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" target="_top" xlink:title="Solves the 0/1 knapsack problem using brute&#45;force approach.">
+<g id="a_Node000006"><a xlink:href="brute_force_8cpp.html#a69edcf63a452d0c85b37bc82c233e5f9" target="_top" xlink:title="Solves the 0/1 knapsack problem using brute&#45;force approach.">
 <polygon fill="white" stroke="#666666" points="86.5,-161.62 24,-161.62 24,-142.38 86.5,-142.38 86.5,-161.62"/>
 <text text-anchor="middle" x="55.25" y="-148.12" font-family="Helvetica,sans-Serif" font-size="10.00">bruteForce</text>
 </a>
@@ -164,7 +164,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="dynamic__programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" target="_top" xlink:title="Solves the 0/1 knapsack problem using dynamic programming.">
+<g id="a_Node000008"><a xlink:href="dynamic_programming_8cpp.html#a65ced1110e5c23b49889f10d4c390c48" target="_top" xlink:title="Solves the 0/1 knapsack problem using dynamic programming.">
 <polygon fill="white" stroke="#666666" points="110.5,-104.62 0,-104.62 0,-85.38 110.5,-85.38 110.5,-104.62"/>
 <text text-anchor="middle" x="55.25" y="-91.12" font-family="Helvetica,sans-Serif" font-size="10.00">dynamicProgramming</text>
 </a>
@@ -182,7 +182,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="greedy__algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" target="_top" xlink:title="Solves the 0/1 knapsack problem using a greedy heuristic.">
+<g id="a_Node000009"><a xlink:href="greedy_algorithm_8cpp.html#ac07353f6977284db6277faff5e48d716" target="_top" xlink:title="Solves the 0/1 knapsack problem using a greedy heuristic.">
 <polygon fill="white" stroke="#666666" points="98.5,-57.62 12,-57.62 12,-38.38 98.5,-38.38 98.5,-57.62"/>
 <text text-anchor="middle" x="55.25" y="-44.12" font-family="Helvetica,sans-Serif" font-size="10.00">greedyAlgorithm</text>
 </a>
@@ -200,7 +200,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="hybrid__algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" target="_top" xlink:title="Hybrid algorithm combining greedy and dynamic programming approaches.">
+<g id="a_Node000010"><a xlink:href="hybrid_algorithm_8cpp.html#ab6b0743f8f01b3ae22e6b3aeeabd9a3c" target="_top" xlink:title="Hybrid algorithm combining greedy and dynamic programming approaches.">
 <polygon fill="white" stroke="#666666" points="97,-20.62 13.5,-20.62 13.5,-1.38 97,-1.38 97,-20.62"/>
 <text text-anchor="middle" x="55.25" y="-7.12" font-family="Helvetica,sans-Serif" font-size="10.00">hybridAlgorithm</text>
 </a>
